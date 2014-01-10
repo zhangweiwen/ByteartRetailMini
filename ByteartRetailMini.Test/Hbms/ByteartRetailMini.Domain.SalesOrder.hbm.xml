@@ -1,0 +1,23 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class xmlns="urn:nhibernate-mapping-2.2" name="ByteartRetailMini.Domain.SalesOrder, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="SalesOrders">
+    <id name="ID" type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="ID" />
+      <generator class="guid.comb" />
+    </id>
+    <property name="Status" type="FluentNHibernate.Mapping.GenericEnumMapper`1[[ByteartRetailMini.Domain.SalesOrderStatus, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], FluentNHibernate, Version=1.4.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880">
+      <column name="Status" />
+    </property>
+    <property name="DateCreated" type="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="DateCreated" not-null="true" />
+    </property>
+    <property name="DateDispatched" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="DateDispatched" />
+    </property>
+    <property name="DateDelivered" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="DateDelivered" />
+    </property>
+    <many-to-one class="ByteartRetailMini.Domain.User, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="User">
+      <column name="User_id" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

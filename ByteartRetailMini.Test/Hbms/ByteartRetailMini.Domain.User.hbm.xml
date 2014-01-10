@@ -1,0 +1,66 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class xmlns="urn:nhibernate-mapping-2.2" name="ByteartRetailMini.Domain.User, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="Users">
+    <id name="ID" type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="ID" />
+      <generator class="guid.comb" />
+    </id>
+    <property name="UserName" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="UserName" length="20" not-null="true" />
+    </property>
+    <property name="Password" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="Password" length="20" not-null="true" />
+    </property>
+    <property name="Email" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="Email" length="80" not-null="true" />
+    </property>
+    <property name="IsDisabled" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="IsDisabled" not-null="true" />
+    </property>
+    <property name="DateRegistered" type="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="DateRegistered" not-null="true" />
+    </property>
+    <property name="DateLastLogon" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="DateLastLogon" />
+    </property>
+    <property name="Contact" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="Contact" length="4001" />
+    </property>
+    <property name="PhoneNumber" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="PhoneNumber" length="4001" />
+    </property>
+    <component name="ContactAddress" class="ByteartRetailMini.Domain.Address, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <property name="Country" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <column name="Country" length="4001" />
+      </property>
+      <property name="State" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <column name="State" length="4001" />
+      </property>
+      <property name="City" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <column name="City" length="4001" />
+      </property>
+      <property name="Street" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <column name="Street" length="4001" />
+      </property>
+      <property name="Zip" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <column name="Zip" length="4001" />
+      </property>
+    </component>
+    <component name="DeliveryAddress" class="ByteartRetailMini.Domain.Address, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <property name="Country" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <column name="Country" length="4001" />
+      </property>
+      <property name="State" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <column name="State" length="4001" />
+      </property>
+      <property name="City" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <column name="City" length="4001" />
+      </property>
+      <property name="Street" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <column name="Street" length="4001" />
+      </property>
+      <property name="Zip" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <column name="Zip" length="4001" />
+      </property>
+    </component>
+  </class>
+</hibernate-mapping>

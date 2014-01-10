@@ -1,0 +1,17 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class xmlns="urn:nhibernate-mapping-2.2" name="ByteartRetailMini.Domain.ShoppingCartItem, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="ShoppingCartItems">
+    <id name="ID" type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="ID" />
+      <generator class="guid.comb" />
+    </id>
+    <property name="Quantity" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="Quantity" not-null="true" />
+    </property>
+    <many-to-one class="ByteartRetailMini.Domain.Product, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Product">
+      <column name="Product_id" />
+    </many-to-one>
+    <many-to-one class="ByteartRetailMini.Domain.ShoppingCart, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ShoppingCart">
+      <column name="ShoppingCart_id" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>
