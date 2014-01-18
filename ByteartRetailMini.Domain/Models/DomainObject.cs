@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteartRetailMini.Domain
+namespace ByteartRetailMini.Domain.Models
 {
     public partial class DomainObject
     {

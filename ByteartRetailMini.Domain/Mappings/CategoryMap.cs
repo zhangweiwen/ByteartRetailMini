@@ -1,7 +1,7 @@
 ﻿using ByteartRetailMini.Domain.Models;
 using FluentNHibernate.Mapping;
 
-namespace ByteartRetailMini.Domain.NHibernate
+namespace ByteartRetailMini.Domain.Mappings
 {
     public sealed class CategoryMap : ClassMap<Category>
     {

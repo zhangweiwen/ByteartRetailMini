@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using ByteartRetailMini.Domain;
+using ByteartRetailMini.Domain.Mappings;
+using ByteartRetailMini.Domain.Models;
 using ByteartRetailMini.Infrastructure;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
@@ -10,14 +9,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NHibernate;
 using NHibernate.Linq;
 using NHibernate.Tool.hbm2ddl;
-using ByteartRetailMini.Domain.NHibernate;
 
 namespace ByteartRetailMini.Test
 {
     [TestClass]
     public class NHibernateTestCast
     {
-        private const string DbFile = @"ByteartRetailMini.sqlite";
+        //private const string DbFile = @"ByteartRetailMini.sqlite";
         private const string HbmPath = @"..\..\Hbms";
         private const string DbScriptFile = @"db.sql";
 

@@ -1,4 +1,4 @@
-﻿namespace ByteartRetailMini.Domain
+﻿namespace ByteartRetailMini.Domain.Models
 {
     public class Address
     {

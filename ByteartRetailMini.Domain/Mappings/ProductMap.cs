@@ -1,7 +1,7 @@
 ﻿using ByteartRetailMini.Domain.Models;
 using FluentNHibernate.Mapping;
 
-namespace ByteartRetailMini.Domain.NHibernate
+namespace ByteartRetailMini.Domain.Mappings
 {
     public sealed class ProductMap : ClassMap<Product>
     {
@@ -13,7 +13,7 @@ namespace ByteartRetailMini.Domain.NHibernate
             Map(x => x.ImageUrl);
             Map(x => x.UnitPrice).Precision(18).Scale(2).Not.Nullable();
             Map(x => x.IsFeatured).Not.Nullable();
-            Map(x => x.Description).Length(4001).Not.Nullable(); ;
+            Map(x => x.Description).Length(4001).Not.Nullable();
         }
     }
 }

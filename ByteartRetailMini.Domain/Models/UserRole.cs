@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteartRetailMini.Domain
+namespace ByteartRetailMini.Domain.Models
 {
     public class UserRole : DomainObject
     {

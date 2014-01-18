@@ -30,36 +30,36 @@
     </property>
     <component name="ContactAddress" class="ByteartRetailMini.Domain.Address, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <property name="Country" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-        <column name="Country" length="4001" />
+        <column name="ContactAddress_Country" length="4001" />
       </property>
       <property name="State" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-        <column name="State" length="4001" />
+        <column name="ContactAddress_State" length="4001" />
       </property>
       <property name="City" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-        <column name="City" length="4001" />
+        <column name="ContactAddress_City" length="4001" />
       </property>
       <property name="Street" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-        <column name="Street" length="4001" />
+        <column name="ContactAddress_Street" length="4001" />
       </property>
       <property name="Zip" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-        <column name="Zip" length="4001" />
+        <column name="ContactAddress_Zip" length="4001" />
       </property>
     </component>
     <component name="DeliveryAddress" class="ByteartRetailMini.Domain.Address, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <property name="Country" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-        <column name="Country" length="4001" />
+        <column name="DeliveryAddress_Country" length="4001" />
       </property>
       <property name="State" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-        <column name="State" length="4001" />
+        <column name="DeliveryAddress_State" length="4001" />
       </property>
       <property name="City" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-        <column name="City" length="4001" />
+        <column name="DeliveryAddress_City" length="4001" />
       </property>
       <property name="Street" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-        <column name="Street" length="4001" />
+        <column name="DeliveryAddress_Street" length="4001" />
       </property>
       <property name="Zip" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-        <column name="Zip" length="4001" />
+        <column name="DeliveryAddress_Zip" length="4001" />
       </property>
     </component>
   </class>

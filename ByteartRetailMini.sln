@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteartRetailMini.Applicati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteartRetailMini.Domain", "ByteartRetailMini.Domain\ByteartRetailMini.Domain.csproj", "{A446F2D0-0CB7-4509-9DA8-AEBF4F029E43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteartRetailMini.Domain.NHibernate", "ByteartRetailMini.Domain.NHibernate\ByteartRetailMini.Domain.NHibernate.csproj", "{40C7E619-50B9-41D6-A57A-64B07D8F2E4A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteartRetailMini.Infrastructure", "ByteartRetailMini.Infrastructure\ByteartRetailMini.Infrastructure.csproj", "{204F46F9-4F33-42C4-8F45-53F3BFE29F8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteartRetailMini.Services", "ByteartRetailMini.Services\ByteartRetailMini.Services.csproj", "{90266EBF-450C-4B91-9624-42AD2685E721}"
@@ -14,6 +12,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteartRetailMini.Web", "ByteartRetailMini.Web\ByteartRetailMini.Web.csproj", "{4436DA05-E208-4004-8354-B751827F0B3D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteartRetailMini.Test", "ByteartRetailMini.Test\ByteartRetailMini.Test.csproj", "{E9F133D9-050D-4087-A808-38B9D6FC4C60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{63BB0FEC-4F6D-47BB-87A0-2A0081AB4A23}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +34,6 @@ Global
 		{A446F2D0-0CB7-4509-9DA8-AEBF4F029E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A446F2D0-0CB7-4509-9DA8-AEBF4F029E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A446F2D0-0CB7-4509-9DA8-AEBF4F029E43}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40C7E619-50B9-41D6-A57A-64B07D8F2E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40C7E619-50B9-41D6-A57A-64B07D8F2E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40C7E619-50B9-41D6-A57A-64B07D8F2E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40C7E619-50B9-41D6-A57A-64B07D8F2E4A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{204F46F9-4F33-42C4-8F45-53F3BFE29F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{204F46F9-4F33-42C4-8F45-53F3BFE29F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{204F46F9-4F33-42C4-8F45-53F3BFE29F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU

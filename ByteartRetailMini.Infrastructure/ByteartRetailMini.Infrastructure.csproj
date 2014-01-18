@@ -48,7 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PagedList.cs" />
+    <Compile Include="PageInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LinqExtensions.cs" />
     <Compile Include="SqlInterceptor.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteartRetailMini.Domain
+namespace ByteartRetailMini.Domain.Models
 {
     /// <summary>
     /// 表示商品的分类信息的对象。

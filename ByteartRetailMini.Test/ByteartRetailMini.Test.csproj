@@ -67,10 +67,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\ByteartRetailMini.Domain.NHibernate\ByteartRetailMini.Domain.NHibernate.csproj">
-      <Project>{40C7E619-50B9-41D6-A57A-64B07D8F2E4A}</Project>
-      <Name>ByteartRetailMini.Domain.NHibernate</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ByteartRetailMini.Domain\ByteartRetailMini.Domain.csproj">
       <Project>{A446F2D0-0CB7-4509-9DA8-AEBF4F029E43}</Project>
       <Name>ByteartRetailMini.Domain</Name>

@@ -1,4 +1,4 @@
-﻿namespace ByteartRetailMini.Domain
+﻿namespace ByteartRetailMini.Domain.Models
 {
     /// <summary>
     /// 表示销售订单的状态。

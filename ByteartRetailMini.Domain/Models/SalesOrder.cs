@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ByteartRetailMini.Domain
+namespace ByteartRetailMini.Domain.Models
 {
     public partial class SalesOrder : DomainObject
     {

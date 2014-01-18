@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace ByteartRetailMini.Domain
+namespace ByteartRetailMini.Domain.Models
 {
     public partial class Category : DomainObject
     {
