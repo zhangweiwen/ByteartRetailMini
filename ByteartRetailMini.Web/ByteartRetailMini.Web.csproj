@@ -51,13 +51,123 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <Content Include="Account\ChangePassword.aspx" />
-    <Content Include="Account\ChangePasswordSuccess.aspx" />
-    <Content Include="Account\Login.aspx" />
+    <Content Include="Home\About.aspx" />
+    <Content Include="Account\Acount.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="Default.aspx" />
+    <Content Include="Admin\Admin.aspx" />
+    <Content Include="Admin\Categories.aspx" />
+    <Content Include="Admin\Products.aspx" />
+    <Content Include="Admin\Roles.aspx" />
+    <Content Include="Admin\SalesOrders.aspx" />
+    <Content Include="Admin\UserAccounts.aspx" />
+    <Content Include="Category.aspx" />
+    <Content Include="Controls\Categories.ascx" />
+    <Content Include="Home\Contact.aspx" />
+    <Content Include="Content\ellipsis-xbl.xml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\superfish-navbar.css" />
+    <Content Include="Content\superfish-vertical.css" />
+    <Content Include="Content\themes\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\smoothness\jquery-ui-1.8.23.custom.css" />
+    <Content Include="Content\uploadify.css" />
+    <Content Include="Content\uploadify.swf" />
+    <Content Include="Home\Index.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Add.png" />
+    <Content Include="Images\Add2.png" />
+    <Content Include="Images\Admin_32.png" />
+    <Content Include="Images\afterlogo.jpg" />
+    <Content Include="Images\arrows-ffffff.png" />
+    <Content Include="Images\Back.png" />
+    <Content Include="Images\Bag.png" />
+    <Content Include="Images\banner.jpg" />
+    <Content Include="Images\byteartretail_logo.png" />
+    <Content Include="Images\byteartretail_logo_trans.png" />
+    <Content Include="Images\Cancel.png" />
+    <Content Include="Images\category.jpg" />
+    <Content Include="Images\Category_32.png" />
+    <Content Include="Images\close.gif" />
+    <Content Include="Images\CopyTo.png" />
+    <Content Include="Images\Delete.png" />
+    <Content Include="Images\Disable.png" />
+    <Content Include="Images\Edit.png" />
+    <Content Include="Images\Enable.png" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\footer.jpg" />
+    <Content Include="Images\hard.jpg" />
+    <Content Include="Images\header.jpg" />
+    <Content Include="Images\Login.png" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\Logout.png" />
+    <Content Include="Images\menu.jpg" />
+    <Content Include="Images\menu_beforelogo.jpg" />
+    <Content Include="Images\newtovar.jpg" />
+    <Content Include="Images\op.jpg" />
+    <Content Include="Images\pic1.jpg" />
+    <Content Include="Images\pic2.jpg" />
+    <Content Include="Images\pic3.jpg" />
+    <Content Include="Images\pic4.jpg" />
+    <Content Include="Images\picap.jpg" />
+    <Content Include="Images\popular.jpg" />
+    <Content Include="Images\Products\29ebfc59_e14a_49bc_9a41_d0796f392475.jpg" />
+    <Content Include="Images\Products\2d3df03f_0663_4f9a_8f6c_cb0af683cd23.jpg" />
+    <Content Include="Images\Products\333c0de9_cae2_4458_a675_3560e8525ae5.jpg" />
+    <Content Include="Images\Products\43dd3fe6_4203_41dd_b570_2c9eacb7c021.jpg" />
+    <Content Include="Images\Products\774f83b1_e90d_4ff1_a148_f90af591a865.jpg" />
+    <Content Include="Images\Products\82d1556f_1238_43ce_a5fd_410cc246162e.jpg" />
+    <Content Include="Images\Products\a1c1738a_eaba_4c4c_b683_7c5b4eb64306.jpg" />
+    <Content Include="Images\Products\b182e978_85e1_474d_84e3_e505441e9000.jpg" />
+    <Content Include="Images\Products\bc0d0d76_3d79_472e_86bb_63a9376d2bab.jpg" />
+    <Content Include="Images\Products\bc2dbf1a_699a_4eaf_a49f_4eccc199bb55.jpg" />
+    <Content Include="Images\Products\c9285a49_972c_4356_a893_3e2a4e45c17d.jpg" />
+    <Content Include="Images\Products\d5d4367d_ab87_4687_8d7c_d1544acf50d1.jpg" />
+    <Content Include="Images\Products\d633a09b_479f_4af2_af9d_635b7a59e1b7.jpg" />
+    <Content Include="Images\Products\dafeaaed_0b93_45ea_8b04_00dd86c62d5e.jpg" />
+    <Content Include="Images\Products\dd34e809_b1fc_4c75_b8f9_c5444a64cb47.jpg" />
+    <Content Include="Images\Products\ProductImage.png" />
+    <Content Include="Images\Product_32.png" />
+    <Content Include="Images\Role_32.png" />
+    <Content Include="Images\SalesOrder_32.png" />
+    <Content Include="Images\Save.png" />
+    <Content Include="Images\shadow.png" />
+    <Content Include="Images\ShoppingCart.png" />
+    <Content Include="Images\ShoppingCart256.png" />
+    <Content Include="Images\ShoppingCart32.png" />
+    <Content Include="Images\ShoppingCart64.png" />
+    <Content Include="Images\spacer.gif" />
+    <Content Include="Images\Success_32.png" />
+    <Content Include="Images\taling.jpg" />
+    <Content Include="Images\taling_center.jpg" />
+    <Content Include="Images\trash.jpg" />
+    <Content Include="Images\Update.png" />
+    <Content Include="Images\User_32.png" />
+    <Content Include="Controls\Logon.ascx" />
+    <Content Include="SalesOrders.aspx" />
+    <Content Include="Scripts\hoverIntent.js" />
+    <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.23.custom.min.js" />
+    <Content Include="Scripts\jquery.uploadify.js" />
+    <Content Include="Scripts\jquery.uploadify.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\superfish.js" />
+    <Content Include="ShoppingCart.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -67,50 +177,43 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.aspx.cs">
+    <Compile Include="Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
+    <Compile Include="Home\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    <Compile Include="Admin\SalesOrders.aspx.cs">
+      <DependentUpon>SalesOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    <Compile Include="Admin\SalesOrders.aspx.designer.cs">
+      <DependentUpon>SalesOrders.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    <Compile Include="Controls\Categories.ascx.cs">
+      <DependentUpon>Categories.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    <Compile Include="Controls\Categories.ascx.designer.cs">
+      <DependentUpon>Categories.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Home\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Home\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Logon.ascx.cs">
+      <DependentUpon>Logon.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Logon.ascx.designer.cs">
+      <DependentUpon>Logon.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -123,11 +226,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\" />
-    <Folder Include="Styles\" />
+    <Folder Include="Images\Products\Large\" />
+    <Folder Include="Images\Products\Medium\" />
+    <Folder Include="Images\Products\Small\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\byteartretail_logo.psd" />
+    <None Include="Images\byteartretail_logo_trans.psd" />
+    <None Include="Images\Products\Thumbs.db" />
+    <None Include="Images\ShoppingCart.psd" />
     <Content Include="Site.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

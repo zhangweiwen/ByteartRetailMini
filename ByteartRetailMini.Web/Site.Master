@@ -1,52 +1,151 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ByteartRetailMini.Web.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="ByteartRetailMini.Web.Site" %>
+<%@ Register TagPrefix="my" Namespace="ByteartRetailMini.Web.Controls" Assembly="ByteartRetailMini.Web" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
-    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
-    </asp:ContentPlaceHolder>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Byteart Retail Mini</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link id="Link1" rel="stylesheet" type="text/css" href="/Content/Site.css" runat="server"/>
+    <link type="text/css" href="/Content/uploadify.css" rel="stylesheet" />
+    <script type="text/javascript" src="/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui-1.8.23.custom.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="/Scripts/hoverIntent.js"></script>
+    <script type="text/javascript" src="/Scripts/superfish.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.uploadify.min.js"></script>
+    <script type="text/javascript">
+        // initialise plugins
+        jQuery(function () {
+            jQuery('ul.sf-menu').superfish();
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
 </head>
 <body>
-    <form runat="server">
-    <div class="page">
-        <div class="header">
-            <div class="title">
-                <h1>
-                    我的 ASP.NET 应用程序
-                </h1>
-            </div>
-            <div class="loginDisplay">
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">登录</a> ]
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        欢迎使用 <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="注销" LogoutPageUrl="~/"/> ]
-                    </LoggedInTemplate>
-                </asp:LoginView>
-            </div>
-            <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
-                    <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="主页"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="关于"/>
-                    </Items>
-                </asp:Menu>
-            </div>
-        </div>
-        <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
-        </div>
-        <div class="clear">
-        </div>
-    </div>
-    <div class="footer">
-        
-    </div>
-    </form>
+    <table width="996" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+            <td height="607" valign="top">
+                <table width="996" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="300" height="55" class="logo"></td>
+                        <td width="480" class="menu">
+                            <ul class="sf-menu">
+                                <li><a href="/Home/Index.aspx">首页</a></li>
+                                <li ID="MyLink" runat="server">
+                                    <a href="/Account/Acount.aspx">我的</a>
+                                    <ul>
+                                        <li><a href="/SalesOrders.aspx">订单</a></li>
+                                        <li><a href="/Account/Acount.aspx">账户</a></li>
+                                        <li><a href="/ShoppingCart.aspx">购物篮</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/Account/Register.aspx">注册</a></li>
+                                <li ID="AdminLink" runat="server"><a href="/Admin/Admin.aspx">管理</a>
+                                    <ul>
+                                        <li id="AdminSalesOrdersLink" runat="server">
+                                            <a href="/Admin/SalesOrders.aspx">销售订单管理</a>
+                                        </li>
+                                        <li id="CategoriesLink" runat="server">
+                                            <a href="/Admin/Categories.aspx">商品分类管理</a>
+                                        </li>
+                                        <li id="ProductsLink" runat="server">
+                                            <a href="/Admin/Products.aspx">商品信息管理</a>
+                                        </li>
+                                        <li id="UserAccountsLink" runat="server">
+                                            <a href="/Admin/UserAccounts.aspx">用户账户管理</a>
+                                        </li>
+                                        <li id="RolesLink" runat="server">
+                                            <a href="/Admin/Roles.aspx">用户角色管理</a> 
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="/Home/About.aspx">关于</a>
+                                    <ul>
+                                        <li>
+                                            <a href="/Home/About.aspx">Byteart Retail Mini</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Home/Contact.aspx">联系方式</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                        <td width="216" class="menu">
+                            <my:Logon ID="Logon1" runat="server"></my:Logon>
+                        </td>
+                    </tr>
+                </table>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="100%" height="10px" />
+                    </tr>
+                </table>
+                <table width="996" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <img src="/images/header.jpg" alt="" width="996" height="300" border="0">
+                        </td>
+                    </tr>
+                </table>
+                <table width="996" border="0" cellspacing="0" cellpadding="0">
+                    <tr align="left" valign="top">
+                        <td width="202" height="334">
+                            <my:Categories ID="Categories1" runat="server"></my:Categories>
+                        </td>
+                        <td width="20">
+                            &nbsp;
+                        </td>
+                        <td width="774">
+                            <table width="774" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>
+                                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table width="996" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <img src="/Images/footer.jpg" alt="" width="996" height="5">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="76">
+                            <table width="996" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="329" height="78" align="right">
+                                        <span class="category">
+                                            <a href="http://daxnet.cnblogs.com/">
+                                                <img src="/Images/spacer.gif" alt="" width="10" height="10" border="0">
+                                            </a>
+                                        </span>
+                                            <a href="#">
+                                                <img src="/Images/byteartretail_logo_trans.png" alt="" border="0">
+                                            </a>
+                                    </td>
+                                    <td width="14">
+                                        &nbsp;
+                                    </td>
+                                    <td width="653">
+                                        <span class="style7"><a href="/Home/Index.aspx">主页</a> &nbsp; | &nbsp;&nbsp;<a href="/Category.aspx">所有分类</a>
+                                            &nbsp;&nbsp;|&nbsp;&nbsp; <a href="/Account/Acount.aspx">我的账户</a>&nbsp;&nbsp; |&nbsp;&nbsp;
+                                            <a href="/Home/Contact.aspx">联系我们</a>&nbsp;&nbsp; |&nbsp;&nbsp;<a href="/Home/About.aspx">关于本站</a></span><br>
+                                        版权所有 &copy; 2011-2012, Byteart Retail, 保留所有权利。
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server" />
 </body>
 </html>
