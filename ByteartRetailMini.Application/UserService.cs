@@ -208,15 +208,13 @@ namespace ByteartRetailMini.Application
             _domainService.UnassignRole(user);
         }
 
-        public RoleDataObject GetUserRoleByUserName(string userName)
+        public RoleDataObject GetUserRole(Guid userId)
         {
-            var user = _session.Query<User>().FirstOrDefault(x => x.UserName == userName);
             return _session.Query<Role>()
                 .Join(_session.Query<UserRole>(), r => r.ID, u => u.RoleID, (r, ur) => new { r, ur })
-                .Where(x => x.ur.UserID == user.ID)
+                .Where(x => x.ur.UserID == userId)
                 .Select(x => x.r)
                 .FirstOrDefault().ToData();
-
         }
     }
 }

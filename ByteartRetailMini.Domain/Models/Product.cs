@@ -3,6 +3,7 @@ using System.Diagnostics;
 
 namespace ByteartRetailMini.Domain.Models
 {
+    [Serializable]
     public partial class Product : DomainObject
     {
         /// <summary>

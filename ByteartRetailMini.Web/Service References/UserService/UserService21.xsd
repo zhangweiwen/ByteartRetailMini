@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfUserDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDataObject" nillable="true" type="tns:UserDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDataObject" nillable="true" type="tns:ArrayOfUserDataObject" />
+  <xs:complexType name="UserDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Contact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactAddress" nillable="true" type="tns:AddressDataObject" />
+      <xs:element minOccurs="0" name="DateLastLogon" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateRegistered" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeliveryAddress" nillable="true" type="tns:AddressDataObject" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDisabled" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="tns:RoleDataObject" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDataObject" nillable="true" type="tns:UserDataObject" />
+  <xs:complexType name="AddressDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressDataObject" nillable="true" type="tns:AddressDataObject" />
+  <xs:complexType name="RoleDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleDataObject" nillable="true" type="tns:RoleDataObject" />
+  <xs:complexType name="ArrayOfRoleDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleDataObject" nillable="true" type="tns:RoleDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoleDataObject" nillable="true" type="tns:ArrayOfRoleDataObject" />
+</xs:schema>

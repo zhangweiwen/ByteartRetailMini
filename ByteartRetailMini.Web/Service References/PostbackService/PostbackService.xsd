@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="zhww@outlook.com" elementFormDefault="qualified" targetNamespace="zhww@outlook.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10159/PostbackService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" />
+  <xs:element name="GetPostback">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostbackResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetPostbackResult" nillable="true" type="q1:PostbackDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

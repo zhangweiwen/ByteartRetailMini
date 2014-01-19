@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="zhww@outlook.com" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="zhww@outlook.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="zhww@outlook.com/Imports">
+      <xsd:import schemaLocation="http://localhost:10159/ProductService.svc?xsd=xsd0" namespace="zhww@outlook.com" />
+      <xsd:import schemaLocation="http://localhost:10159/ProductService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:10159/ProductService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" />
+      <xsd:import schemaLocation="http://localhost:10159/ProductService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:10159/ProductService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Infrastructure" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ProductService_CreateProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProducts" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_CreateProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_CreateCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCategories" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_CreateCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UpdateProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProducts" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UpdateProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UpdateCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategories" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UpdateCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_DeleteProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProducts" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_DeleteProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_DeleteCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategories" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_DeleteCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_CategorizeProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:CategorizeProduct" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_CategorizeProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CategorizeProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UncategorizeProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UncategorizeProduct" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_UncategorizeProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UncategorizeProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetCategoryByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryByID" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetCategoryByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByID" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductsWithPagination_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsWithPagination" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductsWithPagination_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsWithPaginationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductsForCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsForCategory" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductsForCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsForCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductsForCategoryWithPagination_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsForCategoryWithPagination" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetProductsForCategoryWithPagination_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsForCategoryWithPaginationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetFeaturedProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturedProducts" />
+  </wsdl:message>
+  <wsdl:message name="ProductService_GetFeaturedProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeaturedProductsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ProductService">
+    <wsdl:operation name="CreateProducts">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/CreateProducts" message="tns:ProductService_CreateProducts_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/CreateProductsResponse" message="tns:ProductService_CreateProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCategories">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/CreateCategories" message="tns:ProductService_CreateCategories_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/CreateCategoriesResponse" message="tns:ProductService_CreateCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProducts">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/UpdateProducts" message="tns:ProductService_UpdateProducts_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/UpdateProductsResponse" message="tns:ProductService_UpdateProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategories">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/UpdateCategories" message="tns:ProductService_UpdateCategories_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/UpdateCategoriesResponse" message="tns:ProductService_UpdateCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProducts">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/DeleteProducts" message="tns:ProductService_DeleteProducts_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/DeleteProductsResponse" message="tns:ProductService_DeleteProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategories">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/DeleteCategories" message="tns:ProductService_DeleteCategories_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/DeleteCategoriesResponse" message="tns:ProductService_DeleteCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CategorizeProduct">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/CategorizeProduct" message="tns:ProductService_CategorizeProduct_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/CategorizeProductResponse" message="tns:ProductService_CategorizeProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UncategorizeProduct">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/UncategorizeProduct" message="tns:ProductService_UncategorizeProduct_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/UncategorizeProductResponse" message="tns:ProductService_UncategorizeProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryByID">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/GetCategoryByID" message="tns:ProductService_GetCategoryByID_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/GetCategoryByIDResponse" message="tns:ProductService_GetCategoryByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/GetCategories" message="tns:ProductService_GetCategories_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/GetCategoriesResponse" message="tns:ProductService_GetCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByID">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/GetProductByID" message="tns:ProductService_GetProductByID_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/GetProductByIDResponse" message="tns:ProductService_GetProductByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/GetProducts" message="tns:ProductService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/GetProductsResponse" message="tns:ProductService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsWithPagination">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/GetProductsWithPagination" message="tns:ProductService_GetProductsWithPagination_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/GetProductsWithPaginationResponse" message="tns:ProductService_GetProductsWithPagination_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsForCategory">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/GetProductsForCategory" message="tns:ProductService_GetProductsForCategory_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/GetProductsForCategoryResponse" message="tns:ProductService_GetProductsForCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsForCategoryWithPagination">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/GetProductsForCategoryWithPagination" message="tns:ProductService_GetProductsForCategoryWithPagination_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/GetProductsForCategoryWithPaginationResponse" message="tns:ProductService_GetProductsForCategoryWithPagination_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeaturedProducts">
+      <wsdl:input wsaw:Action="zhww@outlook.com/ProductService/GetFeaturedProducts" message="tns:ProductService_GetFeaturedProducts_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/ProductService/GetFeaturedProductsResponse" message="tns:ProductService_GetFeaturedProducts_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

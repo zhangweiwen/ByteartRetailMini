@@ -1,5 +1,8 @@
-﻿namespace ByteartRetailMini.Domain.Models
+﻿using System;
+
+namespace ByteartRetailMini.Domain.Models
 {
+    [Serializable]
     public class SalesLine : DomainObject
     {
         /// <summary>

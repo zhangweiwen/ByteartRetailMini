@@ -77,7 +77,6 @@
     <Compile Include="Models\UserRole.cs" />
     <Compile Include="Services\DomainService.cs" />
     <Compile Include="Services\IDomainService.cs" />
-    <Compile Include="Specifications.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

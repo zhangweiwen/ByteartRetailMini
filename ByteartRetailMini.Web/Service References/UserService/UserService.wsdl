@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="zhww@outlook.com" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="zhww@outlook.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="zhww@outlook.com/Imports">
+      <xsd:import schemaLocation="http://localhost:10159/UserService.svc?xsd=xsd0" namespace="zhww@outlook.com" />
+      <xsd:import schemaLocation="http://localhost:10159/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:10159/UserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" />
+      <xsd:import schemaLocation="http://localhost:10159/UserService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UserService_CreateUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUsers" />
+  </wsdl:message>
+  <wsdl:message name="UserService_CreateUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_ValidateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUser" />
+  </wsdl:message>
+  <wsdl:message name="UserService_ValidateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_DisableUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisableUser" />
+  </wsdl:message>
+  <wsdl:message name="UserService_DisableUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisableUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_EnableUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnableUser" />
+  </wsdl:message>
+  <wsdl:message name="UserService_EnableUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnableUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_UpdateUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsers" />
+  </wsdl:message>
+  <wsdl:message name="UserService_UpdateUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_DeleteUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUsers" />
+  </wsdl:message>
+  <wsdl:message name="UserService_DeleteUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUserByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByKey" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUserByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUserByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmail" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUserByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUserByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByName" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUserByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetRoleByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleByKey" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetRoleByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_CreateRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoles" />
+  </wsdl:message>
+  <wsdl:message name="UserService_CreateRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_UpdateRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRoles" />
+  </wsdl:message>
+  <wsdl:message name="UserService_UpdateRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_DeleteRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoles" />
+  </wsdl:message>
+  <wsdl:message name="UserService_DeleteRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_AssignRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssignRole" />
+  </wsdl:message>
+  <wsdl:message name="UserService_AssignRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssignRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_UnassignRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnassignRole" />
+  </wsdl:message>
+  <wsdl:message name="UserService_UnassignRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnassignRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRole" />
+  </wsdl:message>
+  <wsdl:message name="UserService_GetUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserService">
+    <wsdl:operation name="CreateUsers">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/CreateUsers" message="tns:UserService_CreateUsers_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/CreateUsersResponse" message="tns:UserService_CreateUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/ValidateUser" message="tns:UserService_ValidateUser_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/ValidateUserResponse" message="tns:UserService_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableUser">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/DisableUser" message="tns:UserService_DisableUser_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/DisableUserResponse" message="tns:UserService_DisableUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableUser">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/EnableUser" message="tns:UserService_EnableUser_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/EnableUserResponse" message="tns:UserService_EnableUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsers">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/UpdateUsers" message="tns:UserService_UpdateUsers_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/UpdateUsersResponse" message="tns:UserService_UpdateUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUsers">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/DeleteUsers" message="tns:UserService_DeleteUsers_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/DeleteUsersResponse" message="tns:UserService_DeleteUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByKey">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/GetUserByKey" message="tns:UserService_GetUserByKey_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/GetUserByKeyResponse" message="tns:UserService_GetUserByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByEmail">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/GetUserByEmail" message="tns:UserService_GetUserByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/GetUserByEmailResponse" message="tns:UserService_GetUserByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByName">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/GetUserByName" message="tns:UserService_GetUserByName_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/GetUserByNameResponse" message="tns:UserService_GetUserByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/GetUsers" message="tns:UserService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/GetUsersResponse" message="tns:UserService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/GetRoles" message="tns:UserService_GetRoles_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/GetRolesResponse" message="tns:UserService_GetRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleByKey">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/GetRoleByKey" message="tns:UserService_GetRoleByKey_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/GetRoleByKeyResponse" message="tns:UserService_GetRoleByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRoles">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/CreateRoles" message="tns:UserService_CreateRoles_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/CreateRolesResponse" message="tns:UserService_CreateRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRoles">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/UpdateRoles" message="tns:UserService_UpdateRoles_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/UpdateRolesResponse" message="tns:UserService_UpdateRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoles">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/DeleteRoles" message="tns:UserService_DeleteRoles_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/DeleteRolesResponse" message="tns:UserService_DeleteRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignRole">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/AssignRole" message="tns:UserService_AssignRole_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/AssignRoleResponse" message="tns:UserService_AssignRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnassignRole">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/UnassignRole" message="tns:UserService_UnassignRole_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/UnassignRoleResponse" message="tns:UserService_UnassignRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRole">
+      <wsdl:input wsaw:Action="zhww@outlook.com/UserService/GetUserRole" message="tns:UserService_GetUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/UserService/GetUserRoleResponse" message="tns:UserService_GetUserRole_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -2,6 +2,7 @@
 
 namespace ByteartRetailMini.Domain.Models
 {
+    [Serializable]
     public partial class ShoppingCartItem : DomainObject
     {
         public virtual int Quantity { get; set; }

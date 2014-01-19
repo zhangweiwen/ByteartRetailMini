@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace ByteartRetailMini.Domain.Models
 {
+    [Serializable]
     public partial class SalesOrder : DomainObject
     {
         private List<SalesLine> _salesLines = new List<SalesLine>();

@@ -2,6 +2,7 @@
 
 namespace ByteartRetailMini.Domain.Models
 {
+    [Serializable]
     public class UserRole : DomainObject
     {
         public virtual Guid UserID { get; set; }

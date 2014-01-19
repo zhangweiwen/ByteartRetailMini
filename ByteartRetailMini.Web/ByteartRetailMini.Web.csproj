@@ -14,6 +14,8 @@
     <AssemblyName>ByteartRetailMini.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,11 +35,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Web">
+      <HintPath>..\packages\Autofac.Web.3.1.0\lib\net40\Autofac.Integration.Web.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -51,18 +61,17 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Home\About.aspx" />
     <Content Include="Account\Acount.aspx" />
+    <Content Include="Account\Logon.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Admin\Admin.aspx" />
     <Content Include="Admin\Categories.aspx" />
+    <Content Include="Home\About.aspx" />
     <Content Include="Admin\Products.aspx" />
     <Content Include="Admin\Roles.aspx" />
     <Content Include="Admin\SalesOrders.aspx" />
     <Content Include="Admin\UserAccounts.aspx" />
-    <Content Include="Category.aspx" />
     <Content Include="Controls\Categories.ascx" />
-    <Content Include="Home\Contact.aspx" />
     <Content Include="Content\ellipsis-xbl.xml" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\superfish-navbar.css" />
@@ -83,8 +92,12 @@
     <Content Include="Content\themes\smoothness\jquery-ui-1.8.23.custom.css" />
     <Content Include="Content\uploadify.css" />
     <Content Include="Content\uploadify.swf" />
+    <Content Include="Home\Category.aspx" />
+    <Content Include="Home\Contact.aspx" />
     <Content Include="Home\Index.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Home\SalesOrders.aspx" />
+    <Content Include="Home\ShoppingCart.aspx" />
     <Content Include="Images\Add.png" />
     <Content Include="Images\Add2.png" />
     <Content Include="Images\Admin_32.png" />
@@ -154,7 +167,6 @@
     <Content Include="Images\Update.png" />
     <Content Include="Images\User_32.png" />
     <Content Include="Controls\Logon.ascx" />
-    <Content Include="SalesOrders.aspx" />
     <Content Include="Scripts\hoverIntent.js" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -167,7 +179,104 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\superfish.js" />
-    <Content Include="ShoppingCart.aspx" />
+    <Content Include="packages.config" />
+    <None Include="Service References\OrderService\ByteartRetailMini.Web.OrderService.SalesOrderDataObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrderService\ByteartRetailMini.Web.OrderService.ShoppingCartDataObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrderService\OrderService.wsdl" />
+    <None Include="Service References\OrderService\OrderService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderService\OrderService1.wsdl" />
+    <None Include="Service References\OrderService\OrderService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderService\OrderService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrderService\OrderService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostbackService\ByteartRetailMini.Web.PostbackService.PostbackDataObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PostbackService\PostbackService.wsdl" />
+    <None Include="Service References\PostbackService\PostbackService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostbackService\PostbackService1.wsdl" />
+    <None Include="Service References\PostbackService\PostbackService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostbackService\PostbackService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProductService\ByteartRetailMini.Web.ProductService.CategorizationDataObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProductService\ByteartRetailMini.Web.ProductService.CategoryDataObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProductService\ByteartRetailMini.Web.ProductService.PagedListOfProductDataObjectUqqArW2s.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProductService\ByteartRetailMini.Web.ProductService.ProductDataObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProductService\ProductService.wsdl" />
+    <None Include="Service References\ProductService\ProductService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProductService\ProductService1.wsdl" />
+    <None Include="Service References\ProductService\ProductService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProductService\ProductService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProductService\ProductService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProductService\ProductService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\ByteartRetailMini.Web.UserService.RoleDataObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\ByteartRetailMini.Web.UserService.UserDataObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\UserService.disco" />
+    <None Include="Service References\UserService\configuration91.svcinfo" />
+    <None Include="Service References\UserService\configuration.svcinfo" />
+    <None Include="Service References\UserService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PostbackService\PostbackService.disco" />
+    <None Include="Service References\PostbackService\configuration91.svcinfo" />
+    <None Include="Service References\PostbackService\configuration.svcinfo" />
+    <None Include="Service References\PostbackService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\OrderService\OrderService.disco" />
+    <None Include="Service References\OrderService\configuration91.svcinfo" />
+    <None Include="Service References\OrderService\configuration.svcinfo" />
+    <None Include="Service References\OrderService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ProductService\ProductService.disco" />
+    <None Include="Service References\ProductService\configuration91.svcinfo" />
+    <None Include="Service References\ProductService\configuration.svcinfo" />
+    <None Include="Service References\ProductService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -175,8 +284,76 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <None Include="Service References\UserService\UserService1.wsdl" />
+    <None Include="Service References\UserService\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\Acount.aspx.cs">
+      <DependentUpon>Acount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Acount.aspx.designer.cs">
+      <DependentUpon>Acount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Logon.aspx.cs">
+      <DependentUpon>Logon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Logon.aspx.designer.cs">
+      <DependentUpon>Logon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Roles.aspx.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Roles.aspx.designer.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserAccounts.aspx.cs">
+      <DependentUpon>UserAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserAccounts.aspx.designer.cs">
+      <DependentUpon>UserAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\IocHelper.cs" />
+    <Compile Include="Core\Role.cs" />
     <Compile Include="Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -198,6 +375,20 @@
     <Compile Include="Controls\Categories.ascx.designer.cs">
       <DependentUpon>Categories.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Home\Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -215,7 +406,42 @@
     <Compile Include="Controls\Logon.ascx.designer.cs">
       <DependentUpon>Logon.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Home\SalesOrders.aspx.cs">
+      <DependentUpon>SalesOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\SalesOrders.aspx.designer.cs">
+      <DependentUpon>SalesOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ISiteMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\OrderService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PostbackService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProductService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -223,9 +449,9 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="SiteMasterPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Images\Products\Large\" />
     <Folder Include="Images\Products\Medium\" />
     <Folder Include="Images\Products\Small\" />
@@ -239,6 +465,19 @@
     <None Include="Images\Products\Thumbs.db" />
     <None Include="Images\ShoppingCart.psd" />
     <Content Include="Site.Master" />
+    <None Include="Service References\UserService\UserService.wsdl" />
+    <None Include="Service References\UserService\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\OrderService\" />
+    <WCFMetadataStorage Include="Service References\PostbackService\" />
+    <WCFMetadataStorage Include="Service References\ProductService\" />
+    <WCFMetadataStorage Include="Service References\UserService\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -261,6 +500,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

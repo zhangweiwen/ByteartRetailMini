@@ -2,6 +2,7 @@
 
 namespace ByteartRetailMini.Domain.Models
 {
+    [Serializable]
     public partial class User : DomainObject
     {
         public User()

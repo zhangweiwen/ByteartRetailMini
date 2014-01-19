@@ -1,4 +1,6 @@
-﻿namespace ByteartRetailMini.Domain.Models
+﻿using System;
+
+namespace ByteartRetailMini.Domain.Models
 {
     /// <summary>
     /// 表示销售订单的状态。
@@ -6,6 +8,7 @@
     /// <remarks>此处使用枚举类型，是为了在Domain Model中简化编码，毕竟枚举类型要比整数类型更能表达领域含义。但在
     /// Entity Framework的4.3.1版本中，暂没有对枚举类型的支持。
     /// </remarks>
+    [Serializable]
     public enum SalesOrderStatus
     {
         /// <summary>

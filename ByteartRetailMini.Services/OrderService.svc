@@ -1,0 +1,3 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" 
+	Service="ByteartRetailMini.Services.OrderService" 
+	CodeBehind="OrderService.svc.cs" %>

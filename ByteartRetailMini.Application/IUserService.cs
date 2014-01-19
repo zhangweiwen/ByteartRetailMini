@@ -40,6 +40,6 @@ namespace ByteartRetailMini.Application
 
         void UnassignRole(Guid userID);
 
-        RoleDataObject GetUserRoleByUserName(string userName);
+        RoleDataObject GetUserRole(Guid userId);
     }
 }

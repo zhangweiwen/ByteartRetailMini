@@ -1,7 +1,9 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
 namespace ByteartRetailMini.Domain.Models
 {
+    [Serializable]
     public partial class Category : DomainObject
     {
         /// <summary>

@@ -36,9 +36,9 @@
                                 <li ID="MyLink" runat="server">
                                     <a href="/Account/Acount.aspx">我的</a>
                                     <ul>
-                                        <li><a href="/SalesOrders.aspx">订单</a></li>
+                                        <li><a href="/Home/SalesOrders.aspx">订单</a></li>
                                         <li><a href="/Account/Acount.aspx">账户</a></li>
-                                        <li><a href="/ShoppingCart.aspx">购物篮</a></li>
+                                        <li><a href="/Home/ShoppingCart.aspx">购物篮</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="/Account/Register.aspx">注册</a></li>

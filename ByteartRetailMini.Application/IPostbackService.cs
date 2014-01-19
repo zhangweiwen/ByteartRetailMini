@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ByteartRetailMini.Application.DataObjects;
+﻿using ByteartRetailMini.Application.DataObjects;
 
 namespace ByteartRetailMini.Application
 {

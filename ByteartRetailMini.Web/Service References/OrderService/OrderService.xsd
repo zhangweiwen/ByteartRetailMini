@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10159/OrderService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Domain.Models" />
+  <xs:complexType name="ShoppingCartDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfShoppingCartItemDataObject" />
+      <xs:element minOccurs="0" name="Subtotal" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShoppingCartDataObject" nillable="true" type="tns:ShoppingCartDataObject" />
+  <xs:complexType name="ArrayOfShoppingCartItemDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShoppingCartItemDataObject" nillable="true" type="tns:ShoppingCartItemDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShoppingCartItemDataObject" nillable="true" type="tns:ArrayOfShoppingCartItemDataObject" />
+  <xs:complexType name="ShoppingCartItemDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ProductDataObject" />
+      <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShoppingCartID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShoppingCartItemDataObject" nillable="true" type="tns:ShoppingCartItemDataObject" />
+  <xs:complexType name="ProductDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="tns:CategoryDataObject" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFeatured" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitPrice" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductDataObject" nillable="true" type="tns:ProductDataObject" />
+  <xs:complexType name="CategoryDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProductDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryDataObject" nillable="true" type="tns:CategoryDataObject" />
+  <xs:complexType name="ArrayOfProductDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductDataObject" nillable="true" type="tns:ProductDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductDataObject" nillable="true" type="tns:ArrayOfProductDataObject" />
+  <xs:complexType name="SalesOrderDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerAddressCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerAddressCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerAddressState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerAddressStreet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerAddressZip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateDelivered" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateDispatched" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalesLines" nillable="true" type="tns:ArrayOfSalesLineDataObject" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Domain.Models" minOccurs="0" name="Status" nillable="true" type="q1:SalesOrderStatus" />
+      <xs:element minOccurs="0" name="Subtotal" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesOrderDataObject" nillable="true" type="tns:SalesOrderDataObject" />
+  <xs:complexType name="ArrayOfSalesLineDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesLineDataObject" nillable="true" type="tns:SalesLineDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesLineDataObject" nillable="true" type="tns:ArrayOfSalesLineDataObject" />
+  <xs:complexType name="SalesLineDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ProductDataObject" />
+      <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesOrderID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesLineDataObject" nillable="true" type="tns:SalesLineDataObject" />
+  <xs:complexType name="ArrayOfSalesOrderDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesOrderDataObject" nillable="true" type="tns:SalesOrderDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesOrderDataObject" nillable="true" type="tns:ArrayOfSalesOrderDataObject" />
+</xs:schema>

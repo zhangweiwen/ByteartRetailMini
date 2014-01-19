@@ -5,6 +5,7 @@ namespace ByteartRetailMini.Domain.Models
     /// <summary>
     /// 表示商品的分类信息的对象。
     /// </summary>
+    [Serializable]
     public partial class Categorization : DomainObject
     {
         public virtual Guid CategoryID { get; set; }

@@ -4,16 +4,24 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using Autofac.Integration.Web;
+using ByteartRetailMini.Web.Core;
 
 namespace ByteartRetailMini.Web
 {
-    public class Global : System.Web.HttpApplication
+    public class Global : HttpApplication, IContainerProviderAccessor
     {
+        private static IContainerProvider _containerProvider;
+
+        public IContainerProvider ContainerProvider
+        {
+            get { return _containerProvider; }
+        }
 
         void Application_Start(object sender, EventArgs e)
         {
-            // 在应用程序启动时运行的代码
-
+            IocHelper.Init();
+            _containerProvider = new ContainerProvider(IocHelper.Container);
         }
 
         void Application_End(object sender, EventArgs e)
