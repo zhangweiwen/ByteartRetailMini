@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using Autofac;
+using Autofac.Extras.DynamicProxy2;
 using ByteartRetailMini.Domain.Mappings;
 using ByteartRetailMini.Domain.Models;
 using ByteartRetailMini.Infrastructure;
@@ -57,6 +59,17 @@ namespace ByteartRetailMini.Test
                     Console.WriteLine("==========");
                 }
             }
+        }
+
+        [TestMethod]
+        public void AopTest()
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterType<AopTest>().AsSelf().EnableClassInterceptors()
+                .InterceptedBy(typeof (LogInterceptor));
+            builder.RegisterType<LogInterceptor>();
+            var aop = builder.Build().Resolve<AopTest>();
+            aop.Add(1, 3);
         }
     }
 }

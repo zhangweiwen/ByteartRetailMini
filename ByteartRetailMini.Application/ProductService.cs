@@ -192,7 +192,8 @@ namespace ByteartRetailMini.Application
             if (count > 0)
                 query = query.Take(count);
 
-            return query.Select(p => p.ToData()).ToList();
+            var result = query.Select(p => p.ToData()).ToList();
+            return result;
         }
     }
 }

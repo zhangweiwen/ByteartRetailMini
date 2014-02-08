@@ -5,128 +5,123 @@ using System.ServiceModel.Activation;
 using Autofac;
 using ByteartRetailMini.Application;
 using ByteartRetailMini.Application.DataObjects;
+using ByteartRetailMini.Services.Core;
 
 namespace ByteartRetailMini.Services
 {
+    [IocServiceBehavior]
     [ServiceContract(Namespace = "zhww@outlook.com")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class UserService
+    public class UserService : BaseService
     {
-        private readonly IUserService _userAppService;
-
-        public UserService()
+        [OperationContract]
+        public virtual IList<UserDataObject> CreateUsers(IList<UserDataObject> userDataObjects)
         {
-            _userAppService = IocHelper.Container.Resolve<IUserService>();
+            return UserAppService.CreateUsers(userDataObjects);
         }
 
         [OperationContract]
-        public IList<UserDataObject> CreateUsers(IList<UserDataObject> userDataObjects)
+        public virtual bool ValidateUser(string userName, string password)
         {
-            return _userAppService.CreateUsers(userDataObjects);
-        }
-
-        [OperationContract]
-        public bool ValidateUser(string userName, string password)
-        {
-            return _userAppService.ValidateUser(userName,password);
+            return UserAppService.ValidateUser(userName,password);
             
         }
 
         [OperationContract]
-        public bool DisableUser(Guid userID)
+        public virtual bool DisableUser(Guid userID)
         {
-            return _userAppService.DisableUser(userID);            
+            return UserAppService.DisableUser(userID);            
         }
 
         [OperationContract]
-        public bool EnableUser(Guid userID)
+        public virtual bool EnableUser(Guid userID)
         {
-            return _userAppService.EnableUser(userID);                        
+            return UserAppService.EnableUser(userID);                        
         }
 
         [OperationContract]
-        public IList<UserDataObject> UpdateUsers(IList<UserDataObject> userDataObjects)
+        public virtual IList<UserDataObject> UpdateUsers(IList<UserDataObject> userDataObjects)
         {
-            return _userAppService.UpdateUsers(userDataObjects);                        
+            return UserAppService.UpdateUsers(userDataObjects);                        
             
         }
 
         [OperationContract]
-        public void DeleteUsers(IList<Guid> userIDs)
+        public virtual void DeleteUsers(IList<Guid> userIDs)
         {
-            _userAppService.DeleteUsers(userIDs);
+            UserAppService.DeleteUsers(userIDs);
         }
 
         [OperationContract]
-        public UserDataObject GetUserByKey(Guid id)
+        public virtual UserDataObject GetUserByKey(Guid id)
         {
-            return _userAppService.GetUserByKey(id);
+            return UserAppService.GetUserByKey(id);
         }
 
         [OperationContract]
-        public UserDataObject GetUserByEmail(string email)
+        public virtual UserDataObject GetUserByEmail(string email)
         {
-            return _userAppService.GetUserByEmail(email);            
+            return UserAppService.GetUserByEmail(email);            
         }
 
         [OperationContract]
-        public UserDataObject GetUserByName(string userName)
+        public virtual UserDataObject GetUserByName(string userName)
         {
-            return _userAppService.GetUserByName(userName);                        
+            return UserAppService.GetUserByName(userName);                        
         }
 
         [OperationContract]
-        public IList<UserDataObject> GetUsers()
+        public virtual IList<UserDataObject> GetUsers()
         {
-            return _userAppService.GetUsers();                                    
+            return UserAppService.GetUsers();                                    
         }
 
         [OperationContract]
-        public IList<RoleDataObject> GetRoles()
+        public virtual IList<RoleDataObject> GetRoles()
         {
-            return _userAppService.GetRoles();                                                
+            return UserAppService.GetRoles();                                                
         }
 
         [OperationContract]
-        public RoleDataObject GetRoleByKey(Guid id)
+        public virtual RoleDataObject GetRoleByKey(Guid id)
         {
-            return _userAppService.GetRoleByKey(id);                                                            
+            return UserAppService.GetRoleByKey(id);                                                            
         }
 
         [OperationContract]
-        public IList<RoleDataObject> CreateRoles(IList<RoleDataObject> roleDataObjects)
+        public virtual IList<RoleDataObject> CreateRoles(IList<RoleDataObject> roleDataObjects)
         {
-            return _userAppService.CreateRoles(roleDataObjects);                                                                        
+            return UserAppService.CreateRoles(roleDataObjects);                                                                        
         }
 
         [OperationContract]
-        public IList<RoleDataObject> UpdateRoles(IList<RoleDataObject> roleDataObjects)
+        public virtual IList<RoleDataObject> UpdateRoles(IList<RoleDataObject> roleDataObjects)
         {
-            return _userAppService.UpdateRoles(roleDataObjects);                                                                                    
+            return UserAppService.UpdateRoles(roleDataObjects);                                                                                    
         }
 
         [OperationContract]
-        public void DeleteRoles(IList<Guid> roleIDs)
+        public virtual void DeleteRoles(IList<Guid> roleIDs)
         {
-            _userAppService.DeleteRoles(roleIDs);
+            UserAppService.DeleteRoles(roleIDs);
         }
 
         [OperationContract]
-        public void AssignRole(Guid userID, Guid roleID)
+        public virtual void AssignRole(Guid userID, Guid roleID)
         {
-            _userAppService.AssignRole(userID, roleID);            
+            UserAppService.AssignRole(userID, roleID);            
         }
 
         [OperationContract]
-        public void UnassignRole(Guid userID)
+        public virtual void UnassignRole(Guid userID)
         {
-            _userAppService.UnassignRole(userID);                        
+            UserAppService.UnassignRole(userID);                        
         }
 
         [OperationContract]
-        public RoleDataObject GetUserRole(Guid userId)
+        public virtual RoleDataObject GetUserRole(Guid userId)
         {
-            return _userAppService.GetUserRole(userId);                                                                                                
+            return UserAppService.GetUserRole(userId);                                                                                                
         }
     }
 }

@@ -1,18 +1,19 @@
 ﻿using System.ServiceModel;
 using System.ServiceModel.Activation;
+using Autofac;
 using ByteartRetailMini.Application;
 using ByteartRetailMini.Application.DataObjects;
+using ByteartRetailMini.Services.Core;
 
 namespace ByteartRetailMini.Services
 {
+    [IocServiceBehavior]
     [ServiceContract(Namespace = "zhww@outlook.com")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class PostbackService
+    public class PostbackService : BaseService
     {
-        public IPostbackService PostbackAppService { get; set; }
-
         [OperationContract]
-        public PostbackDataObject GetPostback()
+        public virtual PostbackDataObject GetPostback()
         {
             return PostbackAppService.GetPostback();
         }

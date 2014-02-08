@@ -2,110 +2,111 @@
 using System.Collections.Generic;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
+using Autofac;
 using ByteartRetailMini.Application;
 using ByteartRetailMini.Application.DataObjects;
 using ByteartRetailMini.Infrastructure;
+using ByteartRetailMini.Services.Core;
 
 namespace ByteartRetailMini.Services
 {
+    [IocServiceBehavior]
     [ServiceContract(Namespace = "zhww@outlook.com")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class ProductService
+    public class ProductService : BaseService
     {
-        public IProductService ProductAppService { get; set; }
-
         [OperationContract]
-        public IList<ProductDataObject> CreateProducts(IList<ProductDataObject> productDataObjects)
+        public virtual IList<ProductDataObject> CreateProducts(IList<ProductDataObject> productDataObjects)
         {
             return ProductAppService.CreateProducts(productDataObjects);
         }
 
         [OperationContract]
-        public IList<CategoryDataObject> CreateCategories(IList<CategoryDataObject> categoryDataObjects)
+        public virtual IList<CategoryDataObject> CreateCategories(IList<CategoryDataObject> categoryDataObjects)
         {
             return ProductAppService.CreateCategories(categoryDataObjects);
         }
 
         [OperationContract]
-        public IList<ProductDataObject> UpdateProducts(IList<ProductDataObject> productDataObjects)
+        public virtual IList<ProductDataObject> UpdateProducts(IList<ProductDataObject> productDataObjects)
         {
             return ProductAppService.UpdateProducts(productDataObjects);
         }
 
         [OperationContract]
-        public IList<CategoryDataObject> UpdateCategories(IList<CategoryDataObject> categoryDataObjects)
+        public virtual IList<CategoryDataObject> UpdateCategories(IList<CategoryDataObject> categoryDataObjects)
         {
             return ProductAppService.UpdateCategories(categoryDataObjects);
         }
 
         [OperationContract]
-        public void DeleteProducts(IList<string> productIDs)
+        public virtual void DeleteProducts(IList<string> productIDs)
         {
             ProductAppService.DeleteProducts(productIDs);
         }
 
         [OperationContract]
-        public void DeleteCategories(IList<string> categoryIDs)
+        public virtual void DeleteCategories(IList<string> categoryIDs)
         {
             ProductAppService.DeleteProducts(categoryIDs);
         }
 
         [OperationContract]
-        public CategorizationDataObject CategorizeProduct(Guid productID, Guid categoryID)
+        public virtual CategorizationDataObject CategorizeProduct(Guid productID, Guid categoryID)
         {
             return ProductAppService.CategorizeProduct(productID, categoryID);
         }
 
         [OperationContract]
-        public void UncategorizeProduct(Guid productID)
+        public virtual void UncategorizeProduct(Guid productID)
         {
             ProductAppService.UncategorizeProduct(productID);
         }
 
         [OperationContract]
-        public CategoryDataObject GetCategoryByID(Guid id)
+        public virtual CategoryDataObject GetCategoryByID(Guid id)
         {
             return ProductAppService.GetCategoryByID(id);
         }
 
         [OperationContract]
-        public IList<CategoryDataObject> GetCategories()
+        public virtual IList<CategoryDataObject> GetCategories()
         {
             return ProductAppService.GetCategories();
         }
 
         [OperationContract]
-        public ProductDataObject GetProductByID(Guid id)
+        public virtual ProductDataObject GetProductByID(Guid id)
         {
             return ProductAppService.GetProductByID(id);
         }
 
         [OperationContract]
-        public IList<ProductDataObject> GetProducts()
+        public virtual IList<ProductDataObject> GetProducts()
         {
             return ProductAppService.GetProducts();
         }
 
         [OperationContract]
-        public PagedList<ProductDataObject> GetProductsWithPagination(PageInfo pageInfo)
+        public virtual PagedList<ProductDataObject> GetProductsWithPagination(PageInfo pageInfo)
         {
             return ProductAppService.GetProductsWithPagination(pageInfo);
         }
 
         [OperationContract]
-        public IList<ProductDataObject> GetProductsForCategory(Guid categoryID)
+        public virtual IList<ProductDataObject> GetProductsForCategory(Guid categoryID)
         {
             return ProductAppService.GetProductsForCategory(categoryID);
         }
 
         [OperationContract]
-        public PagedList<ProductDataObject> GetProductsForCategoryWithPagination(Guid categoryID, PageInfo pageInfo)
+        public virtual PagedList<ProductDataObject> GetProductsForCategoryWithPagination(Guid categoryID, PageInfo pageInfo)
         {
             return ProductAppService.GetProductsForCategoryWithPagination(categoryID, pageInfo);
         }
 
         [OperationContract]
-        public IList<ProductDataObject> GetFeaturedProducts(int count)
+        public virtual IList<ProductDataObject> GetFeaturedProducts(int count)
         {
             return ProductAppService.GetFeaturedProducts(count);
         }

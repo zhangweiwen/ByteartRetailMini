@@ -1,83 +1,93 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 using Autofac;
 using ByteartRetailMini.Application;
 using ByteartRetailMini.Application.DataObjects;
+using ByteartRetailMini.Services.Core;
 
 namespace ByteartRetailMini.Services
 {
+    [IocServiceBehavior]
     [ServiceContract(Namespace = "zhww@outlook.com")]
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class OrderService
+    public class OrderService : BaseService
     {
-        public IOrderService OrderAppService { get; set; }
-
         [OperationContract]
-        public int GetShoppingCartItemCount(Guid userID)
+        public virtual int GetShoppingCartItemCount(Guid userID)
         {
             return OrderAppService.GetShoppingCartItemCount(userID);
         }
 
         [OperationContract]
-        public void AddProductToCart(Guid userID, Guid productID, int quantity)
+        public virtual void AddProductToCart(Guid userID, Guid productID, int quantity)
         {
             OrderAppService.AddProductToCart(userID, productID, quantity);
         }
 
         [OperationContract]
-        public ShoppingCartDataObject GetShoppingCart(Guid userID)
+        public virtual ShoppingCartDataObject GetShoppingCart(Guid userID)
         {
             return OrderAppService.GetShoppingCart(userID);
         }
 
         [OperationContract]
-        public void UpdateShoppingCartItem(Guid shoppingCartItemID, int quantity)
+        public virtual void UpdateShoppingCartItem(Guid shoppingCartItemID, int quantity)
         {
             OrderAppService.UpdateShoppingCartItem(shoppingCartItemID, quantity);
         }
 
         [OperationContract]
-        public void DeleteShoppingCartItem(Guid shoppingCartItemID)
+        public virtual void DeleteShoppingCartItem(Guid shoppingCartItemID)
         {
             OrderAppService.DeleteShoppingCartItem(shoppingCartItemID);
         }
 
         [OperationContract]
-        public SalesOrderDataObject Checkout(Guid customerID)
+        public virtual SalesOrderDataObject Checkout(Guid customerID)
         {
             return OrderAppService.Checkout(customerID);
         }
 
         [OperationContract]
-        public void Confirm(Guid orderID)
+        public virtual void Confirm(Guid orderID)
         {
             OrderAppService.Confirm(orderID);
         }
 
         [OperationContract]
-        public void Dispatch(Guid orderID)
+        public virtual void Dispatch(Guid orderID)
         {
             OrderAppService.Dispatch(orderID);
         }
 
         [OperationContract]
-        public IList<SalesOrderDataObject> GetSalesOrdersForUser(Guid userID)
+        public virtual IList<SalesOrderDataObject> GetSalesOrdersForUser(Guid userID)
         {
             return OrderAppService.GetSalesOrdersForUser(userID);
         }
 
         [OperationContract]
-        public IList<SalesOrderDataObject> GetAllSalesOrders()
+        public virtual IList<SalesOrderDataObject> GetAllSalesOrders()
         {
             return OrderAppService.GetAllSalesOrders();
         }
 
         [OperationContract]
-        public SalesOrderDataObject GetSalesOrder(Guid orderID)
+        public virtual SalesOrderDataObject GetSalesOrder(Guid orderID)
         {
             return OrderAppService.GetSalesOrder(orderID);
+        }
+
+        //TODO:remove this operation
+        [OperationContract]
+        public virtual void Test()
+        {
+            Console.SetOut(new StreamWriter("1.txt"));
+            Console.WriteLine("abc");
+            Console.Out.Flush();
         }
     }
 }
