@@ -1,1 +1,0 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SalesOrders.aspx.cs" Inherits="ByteartRetailMini.Web.Admin.SalesOrders" %>

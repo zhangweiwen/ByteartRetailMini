@@ -21,8 +21,20 @@ namespace ByteartRetailMini.Web.Core
 
         private static void RegisterServices()
         {
-            Builder.RegisterType<UserService.UserServiceClient>()
-                .As<UserService.UserService>()
+            Builder.RegisterType<Services.UserServiceClient>()
+                .As<Services.UserService>()
+                .InstancePerHttpRequest();
+
+            Builder.RegisterType<Services.OrderServiceClient>()
+                .As<Services.OrderService>()
+                .InstancePerHttpRequest();
+
+            Builder.RegisterType<Services.PostbackServiceClient>()
+                .As<Services.PostbackService>()
+                .InstancePerHttpRequest();
+
+            Builder.RegisterType<Services.ProductServiceClient>()
+                .As<Services.ProductService>()
                 .InstancePerHttpRequest();
         }
     }

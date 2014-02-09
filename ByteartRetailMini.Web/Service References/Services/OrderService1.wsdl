@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="zhww@outlook.com" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="zhww@outlook.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="zhww@outlook.com/Imports">
+      <xsd:import schemaLocation="http://localhost:10159/OrderService.svc?xsd=xsd0" namespace="zhww@outlook.com" />
+      <xsd:import schemaLocation="http://localhost:10159/OrderService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:10159/OrderService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" />
+      <xsd:import schemaLocation="http://localhost:10159/OrderService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Domain.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="OrderService_GetShoppingCartItemCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShoppingCartItemCount" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetShoppingCartItemCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShoppingCartItemCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_AddProductToCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToCart" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_AddProductToCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetShoppingCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShoppingCart" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetShoppingCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShoppingCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_UpdateShoppingCartItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShoppingCartItem" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_UpdateShoppingCartItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShoppingCartItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_DeleteShoppingCartItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteShoppingCartItem" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_DeleteShoppingCartItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteShoppingCartItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_Checkout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Checkout" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_Checkout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_Confirm_InputMessage">
+    <wsdl:part name="parameters" element="tns:Confirm" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_Confirm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_Dispatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:Dispatch" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_Dispatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DispatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetSalesOrdersForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesOrdersForUser" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetSalesOrdersForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesOrdersForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetAllSalesOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSalesOrders" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetAllSalesOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSalesOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetSalesOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_GetSalesOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_Test_InputMessage">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="OrderService_Test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OrderService">
+    <wsdl:operation name="GetShoppingCartItemCount">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/GetShoppingCartItemCount" message="tns:OrderService_GetShoppingCartItemCount_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/GetShoppingCartItemCountResponse" message="tns:OrderService_GetShoppingCartItemCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToCart">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/AddProductToCart" message="tns:OrderService_AddProductToCart_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/AddProductToCartResponse" message="tns:OrderService_AddProductToCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShoppingCart">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/GetShoppingCart" message="tns:OrderService_GetShoppingCart_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/GetShoppingCartResponse" message="tns:OrderService_GetShoppingCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShoppingCartItem">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/UpdateShoppingCartItem" message="tns:OrderService_UpdateShoppingCartItem_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/UpdateShoppingCartItemResponse" message="tns:OrderService_UpdateShoppingCartItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShoppingCartItem">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/DeleteShoppingCartItem" message="tns:OrderService_DeleteShoppingCartItem_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/DeleteShoppingCartItemResponse" message="tns:OrderService_DeleteShoppingCartItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Checkout">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/Checkout" message="tns:OrderService_Checkout_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/CheckoutResponse" message="tns:OrderService_Checkout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Confirm">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/Confirm" message="tns:OrderService_Confirm_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/ConfirmResponse" message="tns:OrderService_Confirm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Dispatch">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/Dispatch" message="tns:OrderService_Dispatch_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/DispatchResponse" message="tns:OrderService_Dispatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesOrdersForUser">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/GetSalesOrdersForUser" message="tns:OrderService_GetSalesOrdersForUser_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/GetSalesOrdersForUserResponse" message="tns:OrderService_GetSalesOrdersForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSalesOrders">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/GetAllSalesOrders" message="tns:OrderService_GetAllSalesOrders_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/GetAllSalesOrdersResponse" message="tns:OrderService_GetAllSalesOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesOrder">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/GetSalesOrder" message="tns:OrderService_GetSalesOrder_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/GetSalesOrderResponse" message="tns:OrderService_GetSalesOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="zhww@outlook.com/OrderService/Test" message="tns:OrderService_Test_InputMessage" />
+      <wsdl:output wsaw:Action="zhww@outlook.com/OrderService/TestResponse" message="tns:OrderService_Test_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
