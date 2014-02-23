@@ -14,7 +14,7 @@
       <xs:element minOccurs="0" name="DateRegistered" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="DeliveryAddress" nillable="true" type="tns:AddressDataObject" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="IsDisabled" nillable="true" type="xs:boolean" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
@@ -36,7 +36,7 @@
   <xs:complexType name="RoleDataObject">
     <xs:sequence>
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

@@ -95,45 +95,37 @@ namespace ByteartRetailMini.Application
             return results;
         }
 
-        public void DeleteProducts(IList<string> productIDs)
+        public void DeleteProducts(IList<int> productIDs)
         {
             foreach (var id in productIDs)
             {
-                _session.Delete(new Product { ID = Guid.Parse(id) });
+                _session.Delete(new Product { ID = id });
             }
         }
 
-        public void DeleteCategories(IList<string> categoryIDs)
+        public void DeleteCategories(IList<int> categoryIDs)
         {
             foreach (var id in categoryIDs)
             {
-                _session.Delete(new Category { ID = Guid.Parse(id) });
+                _session.Delete(new Category { ID = id });
             }
         }
 
-        public CategorizationDataObject CategorizeProduct(Guid productID, Guid categoryID)
+        public CategorizationDataObject CategorizeProduct(int productID, int categoryID)
         {
-            if (productID == Guid.Empty)
-                throw new ArgumentNullException("productID");
-            if (categoryID == Guid.Empty)
-                throw new ArgumentNullException("categoryID");
-
             var product = _session.Get<Product>(productID);
             var category = _session.Get<Category>(categoryID);
             var categorization = _domainService.Categorize(product, category);
             return categorization.ToData();
         }
 
-        public void UncategorizeProduct(Guid productID)
+        public void UncategorizeProduct(int productID)
         {
-            if (productID == Guid.Empty)
-                throw new ArgumentNullException("productID");
-
             var product = _session.Get<Product>(productID);
             _domainService.Uncategorize(product);
         }
 
-        public CategoryDataObject GetCategoryByID(Guid id)
+        public CategoryDataObject GetCategoryByID(int id)
         {
             return _session.Get<Category>(id).ToData();
         }
@@ -143,9 +135,19 @@ namespace ByteartRetailMini.Application
             return _session.Query<Category>().ToList().Select(c => c.ToData()).ToList();
         }
 
-        public ProductDataObject GetProductByID(Guid id)
+        public Category GetCategoryForProduct(int productID)
         {
-            return _session.Get<Product>(id).ToData();
+            var query = _session.Query<Category>()
+                .Join(_session.Query<Categorization>(), x => x.ID, y => y.CategoryID, (x, y) => new {x, y})
+                .Where(o => o.y.ProductID == productID).Select(x => x.x);
+            return query.FirstOrDefault();
+        }
+
+        public ProductDataObject GetProductByID(int id)
+        {
+            var product = _session.Get<Product>(id).ToData();
+            product.Category = GetCategoryForProduct(id).ToData();
+            return product;
         }
 
         public IList<ProductDataObject> GetProducts()
@@ -155,16 +157,15 @@ namespace ByteartRetailMini.Application
 
         public PagedList<ProductDataObject> GetProductsWithPagination(PageInfo pageInfo)
         {
-            return new PagedList<ProductDataObject>
+            var products = _session.Query<Product>().ToPagedList(pageInfo).Select(p => p.ToData()).ToList();
+            return new PagedList<ProductDataObject>(pageInfo.PageSize, _session.Query<Product>().Count())
             {
-                PageSize = pageInfo.PageSize,
                 PageIndex = pageInfo.PageIndex,
-                TotalCount = _session.Query<Product>().Count(),
-                Items = _session.Query<Product>().ToPagedList(pageInfo).Select(p => p.ToData()).ToList()
+                Items = products
             };
         }
 
-        public IList<ProductDataObject> GetProductsForCategory(Guid categoryID)
+        public IList<ProductDataObject> GetProductsForCategory(int categoryID)
         {
             return _session.Query<Product>()
                 .Join(_session.Query<Categorization>(), p => p.ID, c => c.ProductID, (p, c) => new { p, c })
@@ -172,17 +173,16 @@ namespace ByteartRetailMini.Application
                 .Select(x => x.p.ToData()).ToList();
         }
 
-        public PagedList<ProductDataObject> GetProductsForCategoryWithPagination(Guid categoryID, PageInfo pageInfo)
+        public PagedList<ProductDataObject> GetProductsForCategoryWithPagination(int categoryID, PageInfo pageInfo)
         {
             var query = _session.Query<Product>()
                 .Join(_session.Query<Categorization>(), p => p.ID, c => c.ProductID, (p, c) => new { p, c })
                 .Where(x => x.c.CategoryID == categoryID);
-            return new PagedList<ProductDataObject>
+            var products = query.ToPagedList(pageInfo).Select(x => x.p.ToData()).ToList();
+            return new PagedList<ProductDataObject>(pageInfo.PageSize, query.Count())
             {
-                PageSize = pageInfo.PageSize,
                 PageIndex = pageInfo.PageIndex,
-                TotalCount = query.Count(),
-                Items = query.ToPagedList(pageInfo).Select(x => x.p.ToData()).ToList(),
+                Items = products
             };
         }
 

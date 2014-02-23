@@ -10,7 +10,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Category" nillable="true" type="tns:CategoryDataObject" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IsFeatured" nillable="true" type="xs:boolean" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
@@ -21,7 +21,7 @@
   <xs:complexType name="CategoryDataObject">
     <xs:sequence>
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProductDataObject" />
     </xs:sequence>
@@ -36,7 +36,7 @@
   <xs:complexType name="CategorizationDataObject">
     <xs:sequence>
       <xs:element minOccurs="0" name="CategoryID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

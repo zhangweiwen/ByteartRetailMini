@@ -3,7 +3,7 @@
   <xs:complexType name="PostbackDataObject">
     <xs:sequence>
       <xs:element minOccurs="0" name="CLRVersion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="MachineName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ServerArchitecture" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ServerDateTime" type="xs:dateTime" />

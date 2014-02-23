@@ -16,55 +16,55 @@ namespace ByteartRetailMini.Services
     public class OrderService : BaseService
     {
         [OperationContract]
-        public virtual int GetShoppingCartItemCount(Guid userID)
+        public virtual int GetShoppingCartItemCount(string userName)
         {
-            return OrderAppService.GetShoppingCartItemCount(userID);
+            return OrderAppService.GetShoppingCartItemCount(userName);
         }
 
         [OperationContract]
-        public virtual void AddProductToCart(Guid userID, Guid productID, int quantity)
+        public virtual void AddProductToCart(string userName, int productID, int quantity)
         {
-            OrderAppService.AddProductToCart(userID, productID, quantity);
+            OrderAppService.AddProductToCart(userName, productID, quantity);
         }
 
         [OperationContract]
-        public virtual ShoppingCartDataObject GetShoppingCart(Guid userID)
+        public virtual ShoppingCartDataObject GetShoppingCart(string userName)
         {
-            return OrderAppService.GetShoppingCart(userID);
+            return OrderAppService.GetShoppingCart(userName);
         }
 
         [OperationContract]
-        public virtual void UpdateShoppingCartItem(Guid shoppingCartItemID, int quantity)
+        public virtual void UpdateShoppingCartItem(int shoppingCartItemID, int quantity)
         {
             OrderAppService.UpdateShoppingCartItem(shoppingCartItemID, quantity);
         }
 
         [OperationContract]
-        public virtual void DeleteShoppingCartItem(Guid shoppingCartItemID)
+        public virtual void DeleteShoppingCartItem(int shoppingCartItemID)
         {
             OrderAppService.DeleteShoppingCartItem(shoppingCartItemID);
         }
 
         [OperationContract]
-        public virtual SalesOrderDataObject Checkout(Guid customerID)
+        public virtual SalesOrderDataObject Checkout(string userName)
         {
-            return OrderAppService.Checkout(customerID);
+            return OrderAppService.Checkout(userName);
         }
 
         [OperationContract]
-        public virtual void Confirm(Guid orderID)
+        public virtual void Confirm(int orderID)
         {
             OrderAppService.Confirm(orderID);
         }
 
         [OperationContract]
-        public virtual void Dispatch(Guid orderID)
+        public virtual void Dispatch(int orderID)
         {
             OrderAppService.Dispatch(orderID);
         }
 
         [OperationContract]
-        public virtual IList<SalesOrderDataObject> GetSalesOrdersForUser(Guid userID)
+        public virtual IList<SalesOrderDataObject> GetSalesOrdersForUser(int userID)
         {
             return OrderAppService.GetSalesOrdersForUser(userID);
         }
@@ -76,7 +76,7 @@ namespace ByteartRetailMini.Services
         }
 
         [OperationContract]
-        public virtual SalesOrderDataObject GetSalesOrder(Guid orderID)
+        public virtual SalesOrderDataObject GetSalesOrder(int orderID)
         {
             return OrderAppService.GetSalesOrder(orderID);
         }

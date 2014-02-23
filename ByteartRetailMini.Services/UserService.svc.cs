@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
-using Autofac;
-using ByteartRetailMini.Application;
 using ByteartRetailMini.Application.DataObjects;
 using ByteartRetailMini.Services.Core;
 
@@ -24,17 +22,16 @@ namespace ByteartRetailMini.Services
         public virtual bool ValidateUser(string userName, string password)
         {
             return UserAppService.ValidateUser(userName,password);
-            
         }
 
         [OperationContract]
-        public virtual bool DisableUser(Guid userID)
+        public virtual bool DisableUser(int userID)
         {
             return UserAppService.DisableUser(userID);            
         }
 
         [OperationContract]
-        public virtual bool EnableUser(Guid userID)
+        public virtual bool EnableUser(int userID)
         {
             return UserAppService.EnableUser(userID);                        
         }
@@ -47,13 +44,13 @@ namespace ByteartRetailMini.Services
         }
 
         [OperationContract]
-        public virtual void DeleteUsers(IList<Guid> userIDs)
+        public virtual void DeleteUsers(IList<int> userIDs)
         {
             UserAppService.DeleteUsers(userIDs);
         }
 
         [OperationContract]
-        public virtual UserDataObject GetUserByKey(Guid id)
+        public virtual UserDataObject GetUserByKey(int id)
         {
             return UserAppService.GetUserByKey(id);
         }
@@ -83,7 +80,7 @@ namespace ByteartRetailMini.Services
         }
 
         [OperationContract]
-        public virtual RoleDataObject GetRoleByKey(Guid id)
+        public virtual RoleDataObject GetRoleByKey(int id)
         {
             return UserAppService.GetRoleByKey(id);                                                            
         }
@@ -101,27 +98,27 @@ namespace ByteartRetailMini.Services
         }
 
         [OperationContract]
-        public virtual void DeleteRoles(IList<Guid> roleIDs)
+        public virtual void DeleteRoles(IList<int> roleIDs)
         {
             UserAppService.DeleteRoles(roleIDs);
         }
 
         [OperationContract]
-        public virtual void AssignRole(Guid userID, Guid roleID)
+        public virtual void AssignRole(int userID, int roleID)
         {
             UserAppService.AssignRole(userID, roleID);            
         }
 
         [OperationContract]
-        public virtual void UnassignRole(Guid userID)
+        public virtual void UnassignRole(int userID)
         {
             UserAppService.UnassignRole(userID);                        
         }
 
         [OperationContract]
-        public virtual RoleDataObject GetUserRole(Guid userId)
+        public virtual RoleDataObject GetUserRole(string name)
         {
-            return UserAppService.GetUserRole(userId);                                                                                                
+            return UserAppService.GetUserRole(name);                                                                                                
         }
     }
 }

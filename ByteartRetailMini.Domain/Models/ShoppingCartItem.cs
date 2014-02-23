@@ -20,7 +20,7 @@ namespace ByteartRetailMini.Domain.Models
         /// <returns></returns>
         public virtual SalesLine ConvertToSalesLine()
         {
-            var salesLine = new SalesLine { ID = Guid.NewGuid(), Product = Product, Quantity = Quantity };
+            var salesLine = new SalesLine { Product = Product, Quantity = Quantity };
             return salesLine;
         }
 

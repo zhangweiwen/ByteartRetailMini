@@ -7,7 +7,7 @@ namespace ByteartRetailMini.Application.DataObjects
     public sealed class CategoryDataObject
     {
         [DataMember]
-        public string ID { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public string Name { get; set; }

@@ -97,7 +97,6 @@ namespace ByteartRetailMini.Domain.Services
             {
                 userRole = new UserRole
                 {
-                    ID = Guid.NewGuid(),
                     RoleID = role.ID,
                     UserID = user.ID
                 };

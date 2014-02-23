@@ -12,7 +12,6 @@ namespace ByteartRetailMini.Application
             var sa = string.Format(formater, Environment.ProcessorCount, bit);
             return new PostbackDataObject
             {
-                ID = Guid.NewGuid().ToString(),
                 ServerArchitecture = sa,
                 ServerDateTime = DateTime.Now,
                 ServerOS = Environment.OSVersion.ToString(),

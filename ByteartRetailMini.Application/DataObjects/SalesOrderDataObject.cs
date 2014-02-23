@@ -9,7 +9,7 @@ namespace ByteartRetailMini.Application.DataObjects
     public class SalesOrderDataObject
     {
         [DataMember]
-        public string ID { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public SalesOrderStatus? Status { get; set; }

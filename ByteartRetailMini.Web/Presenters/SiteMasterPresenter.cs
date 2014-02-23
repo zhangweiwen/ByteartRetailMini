@@ -22,14 +22,14 @@ namespace ByteartRetailMini.Web.Presenters
         {
             if (identity.IsAuthenticated && string.IsNullOrWhiteSpace(identity.Name) == false)
             {
-                var userRole = _userService.GetUserRole(Guid.Parse(identity.Name));
+                var userRole = _userService.GetUserRole(identity.Name);
                 if (userRole == null)
                 {
                     _siteMaster.RemoveNotAuthenticatedLinks();
                     return;
                 }
                 var role = (Role)Enum.Parse(typeof(Role), userRole.Name);
-                _siteMaster.RemoveLinkByRole(role);
+                _siteMaster.LogonSuccess(role);
             }
             else
             {

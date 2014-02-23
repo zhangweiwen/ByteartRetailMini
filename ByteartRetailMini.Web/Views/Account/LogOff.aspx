@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogOff.aspx.cs" Inherits="ByteartRetailMini.Web.Views.Account.LogOff" %>

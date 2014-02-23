@@ -10,15 +10,15 @@ namespace ByteartRetailMini.Application
 
         bool ValidateUser(string userName, string password);
 
-        bool DisableUser(Guid userID);
+        bool DisableUser(int userID);
 
-        bool EnableUser(Guid userID);
+        bool EnableUser(int userID);
 
         IList<UserDataObject> UpdateUsers(IList<UserDataObject> userDataObjects);
 
-        void DeleteUsers(IList<Guid> userIDs);
+        void DeleteUsers(IList<int> userIDs);
 
-        UserDataObject GetUserByKey(Guid id);
+        UserDataObject GetUserByKey(int id);
 
         UserDataObject GetUserByEmail(string email);
 
@@ -28,18 +28,18 @@ namespace ByteartRetailMini.Application
 
         IList<RoleDataObject> GetRoles();
 
-        RoleDataObject GetRoleByKey(Guid id);
+        RoleDataObject GetRoleByKey(int id);
 
         IList<RoleDataObject> CreateRoles(IList<RoleDataObject> roleDataObjects);
 
         IList<RoleDataObject> UpdateRoles(IList<RoleDataObject> roleDataObjects);
 
-        void DeleteRoles(IList<Guid> roleIDs);
+        void DeleteRoles(IList<int> roleIDs);
 
-        void AssignRole(Guid userID, Guid roleID);
+        void AssignRole(int userID, int roleID);
 
-        void UnassignRole(Guid userID);
+        void UnassignRole(int userID);
 
-        RoleDataObject GetUserRole(Guid userId);
+        RoleDataObject GetUserRole(string name);
     }
 }

@@ -6,7 +6,7 @@ namespace ByteartRetailMini.Application.DataObjects
     public class CategorizationDataObject
     {
         [DataMember]
-        public string ID { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public string ProductID { get; set; }

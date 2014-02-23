@@ -40,31 +40,31 @@ namespace ByteartRetailMini.Services
         }
 
         [OperationContract]
-        public virtual void DeleteProducts(IList<string> productIDs)
+        public virtual void DeleteProducts(IList<int> productIDs)
         {
             ProductAppService.DeleteProducts(productIDs);
         }
 
         [OperationContract]
-        public virtual void DeleteCategories(IList<string> categoryIDs)
+        public virtual void DeleteCategories(IList<int> categoryIDs)
         {
             ProductAppService.DeleteProducts(categoryIDs);
         }
 
         [OperationContract]
-        public virtual CategorizationDataObject CategorizeProduct(Guid productID, Guid categoryID)
+        public virtual CategorizationDataObject CategorizeProduct(int productID, int categoryID)
         {
             return ProductAppService.CategorizeProduct(productID, categoryID);
         }
 
         [OperationContract]
-        public virtual void UncategorizeProduct(Guid productID)
+        public virtual void UncategorizeProduct(int productID)
         {
             ProductAppService.UncategorizeProduct(productID);
         }
 
         [OperationContract]
-        public virtual CategoryDataObject GetCategoryByID(Guid id)
+        public virtual CategoryDataObject GetCategoryByID(int id)
         {
             return ProductAppService.GetCategoryByID(id);
         }
@@ -76,7 +76,7 @@ namespace ByteartRetailMini.Services
         }
 
         [OperationContract]
-        public virtual ProductDataObject GetProductByID(Guid id)
+        public virtual ProductDataObject GetProductByID(int id)
         {
             return ProductAppService.GetProductByID(id);
         }
@@ -94,13 +94,13 @@ namespace ByteartRetailMini.Services
         }
 
         [OperationContract]
-        public virtual IList<ProductDataObject> GetProductsForCategory(Guid categoryID)
+        public virtual IList<ProductDataObject> GetProductsForCategory(int categoryID)
         {
             return ProductAppService.GetProductsForCategory(categoryID);
         }
 
         [OperationContract]
-        public virtual PagedList<ProductDataObject> GetProductsForCategoryWithPagination(Guid categoryID, PageInfo pageInfo)
+        public virtual PagedList<ProductDataObject> GetProductsForCategoryWithPagination(int categoryID, PageInfo pageInfo)
         {
             return ProductAppService.GetProductsForCategoryWithPagination(categoryID, pageInfo);
         }

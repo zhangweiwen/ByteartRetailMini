@@ -38,9 +38,10 @@ namespace System.Linq.Dynamic
 
         public static List<T> ToPagedList<T>(this IQueryable<T> queryable, PageInfo pageInfo)
         {
-            return queryable.OrderBy(pageInfo.OrderPropertyName, pageInfo.IsDesc)
-                .Skip((pageInfo.PageIndex - 1) * pageInfo.PageSize)
-                .Take(pageInfo.PageSize).ToList();
+            if (string.IsNullOrWhiteSpace(pageInfo.OrderPropertyName) == false)
+                queryable = queryable.OrderBy(pageInfo.OrderPropertyName, pageInfo.IsDesc);
+
+            return queryable.Skip((pageInfo.PageIndex - 1) * pageInfo.PageSize).Take(pageInfo.PageSize).ToList();
         }
     }
 }

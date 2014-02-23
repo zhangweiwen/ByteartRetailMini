@@ -9,7 +9,7 @@ using ByteartRetailMini.Web.Services;
 namespace ByteartRetailMini.Web.Views
 {
     //初始化部分
-    public partial class Site : MasterPage, ISiteMaster
+    public partial class Site : DependencyResolvingMasterPage, ISiteMaster
     {
         private SiteMasterPresenter _presenter;
 
@@ -41,8 +41,9 @@ namespace ByteartRetailMini.Web.Views
             Controls.Remove(AdminLink);
         }
 
-        public void RemoveLinkByRole(Role role)
+        public void LogonSuccess(Role role)
         {
+            Controls.Remove(RegisterLi);
             switch (role)
             {
                 case Role.None:

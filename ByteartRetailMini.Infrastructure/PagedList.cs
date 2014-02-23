@@ -1,25 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace ByteartRetailMini.Infrastructure
 {
-    [Serializable]
+    [DataContract]
     public class PagedList<T>
     {
-        public int PageSize { get; set; }
-
-        public int PageIndex { get; set; }
-
-        public int? TotalCount { get; set; }
-
-        public int? TotalPage
+        public PagedList(int pageSize, int totalCount)
         {
-            get
-            {
-                return TotalCount + PageSize - 1 / PageSize;
-            }
+            PageSize = pageSize;
+            TotalCount = totalCount;
+            TotalPage = (TotalCount + PageSize - 1) / PageSize;
         }
 
-        public IList<T> Items { get; set; }
+        [DataMember]
+        public int PageSize { get; private set; }
+
+        [DataMember]
+        public int PageIndex { get; set; }
+
+        [DataMember]
+        public int? TotalCount { get; private set; }
+
+        [DataMember]
+        public int? TotalPage { get; private set; }
+
+        [DataMember]
+        public List<T> Items { get; set; }
     }
 }

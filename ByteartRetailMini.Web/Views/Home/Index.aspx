@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="主页" Language="C#" MasterPageFile="~/Views/Site.master" AutoEventWireup="true"
     CodeBehind="Index.aspx.cs" Inherits="ByteartRetailMini.Web.Views.Home.Index" %>
+<%@ Register TagPrefix="my" tagName="Products" src="/Controls/Products.ascx"%>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
@@ -51,4 +52,5 @@
             </td>
         </tr>
     </table>
+    <my:Products ID="Products" runat="server"></my:Products>
 </asp:Content>

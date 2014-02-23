@@ -123,7 +123,9 @@
     <None Include="Service References\Services\OrderService.disco" />
     <None Include="Service References\Services\PostbackService.disco" />
     <None Include="Service References\Services\UserService.disco" />
+    <Content Include="Controls\Products.ascx" />
     <Content Include="Views\Account\Acount.aspx" />
+    <Content Include="Views\Account\LogOff.aspx" />
     <Content Include="Views\Account\Logon.aspx" />
     <Content Include="Views\Account\Register.aspx" />
     <Content Include="Views\Admin\Admin.aspx" />
@@ -154,8 +156,11 @@
     <Content Include="Content\themes\smoothness\jquery-ui-1.8.23.custom.css" />
     <Content Include="Content\uploadify.css" />
     <Content Include="Content\uploadify.swf" />
+    <Content Include="Views\Home\AddToCart.aspx" />
     <Content Include="Views\Home\Category.aspx" />
+    <Content Include="Views\Home\Checkout.aspx" />
     <Content Include="Views\Home\Contact.aspx" />
+    <Content Include="Views\Home\DeleteShoppingCartItem.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Views\Home\Product.aspx" />
@@ -243,6 +248,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\superfish.js" />
     <Content Include="packages.config" />
+    <Content Include="Views\Home\UpdateShoppingCartItem.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -280,11 +286,32 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Products.ascx.cs">
+      <DependentUpon>Products.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Products.ascx.designer.cs">
+      <DependentUpon>Products.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\AuthorizePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\Constants.cs" />
+    <Compile Include="Core\DependencyResolvingMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Core\DependencyResolvingUserControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Core\Helper.cs" />
+    <Compile Include="IViews\Account\ILogon.cs" />
     <Compile Include="IViews\Controls\ICategories.cs" />
+    <Compile Include="IViews\Controls\IProducts.cs" />
+    <Compile Include="IViews\Home\IShoppingCart.cs" />
+    <Compile Include="Presenters\Account\LogonPresenter.cs" />
     <Compile Include="Presenters\Controls\CategoriesPresenter.cs" />
+    <Compile Include="Presenters\Controls\ProductsPresenter.cs" />
+    <Compile Include="Presenters\Home\ShoppingCartPresenter.cs" />
     <Compile Include="Service References\Services\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -296,6 +323,13 @@
     </Compile>
     <Compile Include="Views\Account\Acount.aspx.designer.cs">
       <DependentUpon>Acount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\LogOff.aspx.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Account\LogOff.aspx.designer.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Account\Logon.aspx.cs">
       <DependentUpon>Logon.aspx</DependentUpon>
@@ -369,6 +403,13 @@
     <Compile Include="Controls\Categories.ascx.designer.cs">
       <DependentUpon>Categories.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Home\AddToCart.aspx.cs">
+      <DependentUpon>AddToCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\AddToCart.aspx.designer.cs">
+      <DependentUpon>AddToCart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\Category.aspx.cs">
       <DependentUpon>Category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -376,12 +417,26 @@
     <Compile Include="Views\Home\Category.aspx.designer.cs">
       <DependentUpon>Category.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Home\Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Home\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\DeleteShoppingCartItem.aspx.cs">
+      <DependentUpon>DeleteShoppingCartItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\DeleteShoppingCartItem.aspx.designer.cs">
+      <DependentUpon>DeleteShoppingCartItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -425,6 +480,13 @@
     </Compile>
     <Compile Include="IViews\ISiteMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Home\UpdateShoppingCartItem.aspx.cs">
+      <DependentUpon>UpdateShoppingCartItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\UpdateShoppingCartItem.aspx.designer.cs">
+      <DependentUpon>UpdateShoppingCartItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

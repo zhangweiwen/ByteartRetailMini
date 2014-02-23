@@ -7,7 +7,7 @@ namespace ByteartRetailMini.Application.DataObjects
     public class PostbackDataObject
     {
         [DataMember]
-        public string ID { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public string ServerOS { get; set; }

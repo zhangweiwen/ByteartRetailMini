@@ -54,6 +54,9 @@
     <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.1.0\lib\net40\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.SQLite">
       <HintPath>..\packages\System.Data.SQLite.1.0.90.0\lib\net40\System.Data.SQLite.dll</HintPath>
     </Reference>
@@ -110,6 +113,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\IocServiceBehavior.cs" />
+    <Compile Include="NLog-NHibernate.cs" />
     <Compile Include="OrderService.svc.cs">
       <DependentUpon>OrderService.svc</DependentUpon>
     </Compile>

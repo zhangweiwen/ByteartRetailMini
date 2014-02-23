@@ -7,7 +7,7 @@ namespace ByteartRetailMini.Application.DataObjects
     public class SalesLineDataObject
     {
         [DataMember]
-        public string ID { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public int? Quantity { get; set; }

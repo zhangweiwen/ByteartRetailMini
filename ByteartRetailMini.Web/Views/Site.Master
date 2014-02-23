@@ -33,42 +33,42 @@
                         <td width="300" height="55" class="logo"></td>
                         <td width="480" class="menu">
                             <ul class="sf-menu">
-                                <li><a href="/Home/Index.aspx">首页</a></li>
+                                <li><a href="/Home/Index">首页</a></li>
                                 <li ID="MyLink" runat="server">
-                                    <a href="/Account/Acount.aspx">我的</a>
+                                    <a href="/Account/Acount">我的</a>
                                     <ul>
-                                        <li><a href="/Home/SalesOrders.aspx">订单</a></li>
-                                        <li><a href="/Account/Acount.aspx">账户</a></li>
-                                        <li><a href="/Home/ShoppingCart.aspx">购物篮</a></li>
+                                        <li><a href="/Home/SalesOrders">订单</a></li>
+                                        <li><a href="/Account/Acount">账户</a></li>
+                                        <li><a href="/Home/ShoppingCart">购物篮</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/Account/Register.aspx">注册</a></li>
-                                <li ID="AdminLink" runat="server"><a href="/Admin/Admin.aspx">管理</a>
+                                <li runat="server" ID="RegisterLi"><a href="/Account/Register">注册</a></li>
+                                <li ID="AdminLink" runat="server"><a href="/Admin/Admin">管理</a>
                                     <ul>
                                         <li id="AdminSalesOrdersLink" runat="server">
-                                            <a href="/Admin/SalesOrders.aspx">销售订单管理</a>
+                                            <a href="/Admin/SalesOrders">销售订单管理</a>
                                         </li>
                                         <li id="CategoriesLink" runat="server">
-                                            <a href="/Admin/Categories.aspx">商品分类管理</a>
+                                            <a href="/Admin/Categories">商品分类管理</a>
                                         </li>
                                         <li id="ProductsLink" runat="server">
-                                            <a href="/Admin/Products.aspx">商品信息管理</a>
+                                            <a href="/Admin/Products">商品信息管理</a>
                                         </li>
                                         <li id="UserAccountsLink" runat="server">
-                                            <a href="/Admin/UserAccounts.aspx">用户账户管理</a>
+                                            <a href="/Admin/UserAccounts">用户账户管理</a>
                                         </li>
                                         <li id="RolesLink" runat="server">
-                                            <a href="/Admin/Roles.aspx">用户角色管理</a> 
+                                            <a href="/Admin/Roles">用户角色管理</a> 
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="/Home/About.aspx">关于</a>
+                                <li><a href="/Home/About">关于</a>
                                     <ul>
                                         <li>
-                                            <a href="/Home/About.aspx">Byteart Retail Mini</a>
+                                            <a href="/Home/About">Byteart Retail Mini</a>
                                         </li>
                                         <li>
-                                            <a href="/Home/Contact.aspx">联系方式</a>
+                                            <a href="/Home/Contact">联系方式</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -134,9 +134,9 @@
                                         &nbsp;
                                     </td>
                                     <td width="653">
-                                        <span class="style7"><a href="/Home/Index.aspx">主页</a> &nbsp; | &nbsp;&nbsp;<a href="/Category.aspx">所有分类</a>
-                                            &nbsp;&nbsp;|&nbsp;&nbsp; <a href="/Account/Acount.aspx">我的账户</a>&nbsp;&nbsp; |&nbsp;&nbsp;
-                                            <a href="/Home/Contact.aspx">联系我们</a>&nbsp;&nbsp; |&nbsp;&nbsp;<a href="/Home/About.aspx">关于本站</a></span><br>
+                                        <span class="style7"><a href="/Home/Index">主页</a> &nbsp; | &nbsp;&nbsp;<a href="/Category.aspx">所有分类</a>
+                                            &nbsp;&nbsp;|&nbsp;&nbsp; <a href="/Account/Acount">我的账户</a>&nbsp;&nbsp; |&nbsp;&nbsp;
+                                            <a href="/Home/Contact">联系我们</a>&nbsp;&nbsp; |&nbsp;&nbsp;<a href="/Home/About.aspx">关于本站</a></span><br>
                                         版权所有 &copy; 2011-2012, Byteart Retail, 保留所有权利。
                                     </td>
                                 </tr>

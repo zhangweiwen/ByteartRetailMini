@@ -6,7 +6,7 @@ namespace ByteartRetailMini.Application.DataObjects
     public sealed class ShoppingCartItemDataObject
     {
         [DataMember]
-        public string ID { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public int? Quantity { get; set; }

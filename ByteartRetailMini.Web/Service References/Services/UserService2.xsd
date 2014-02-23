@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="zhww@outlook.com" elementFormDefault="qualified" targetNamespace="zhww@outlook.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:10159/UserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" />
-  <xs:import schemaLocation="http://localhost:10159/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="http://localhost:10159/UserService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="CreateUsers">
     <xs:complexType>
@@ -35,7 +34,7 @@
   <xs:element name="DisableUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="userID" type="q3:guid" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,7 +48,7 @@
   <xs:element name="EnableUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="userID" type="q4:guid" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -63,21 +62,21 @@
   <xs:element name="UpdateUsers">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="userDataObjects" nillable="true" type="q5:ArrayOfUserDataObject" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="userDataObjects" nillable="true" type="q3:ArrayOfUserDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="UpdateUsersResult" nillable="true" type="q6:ArrayOfUserDataObject" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="UpdateUsersResult" nillable="true" type="q4:ArrayOfUserDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeleteUsers">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userIDs" nillable="true" type="q7:ArrayOfguid" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userIDs" nillable="true" type="q5:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -89,14 +88,14 @@
   <xs:element name="GetUserByKey">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q8:guid" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetUserByKeyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetUserByKeyResult" nillable="true" type="q9:UserDataObject" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetUserByKeyResult" nillable="true" type="q6:UserDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -110,7 +109,7 @@
   <xs:element name="GetUserByEmailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetUserByEmailResult" nillable="true" type="q10:UserDataObject" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetUserByEmailResult" nillable="true" type="q7:UserDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -124,7 +123,7 @@
   <xs:element name="GetUserByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetUserByNameResult" nillable="true" type="q11:UserDataObject" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetUserByNameResult" nillable="true" type="q8:UserDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -136,7 +135,7 @@
   <xs:element name="GetUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetUsersResult" nillable="true" type="q12:ArrayOfUserDataObject" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetUsersResult" nillable="true" type="q9:ArrayOfUserDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -148,56 +147,56 @@
   <xs:element name="GetRolesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetRolesResult" nillable="true" type="q13:ArrayOfRoleDataObject" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetRolesResult" nillable="true" type="q10:ArrayOfRoleDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetRoleByKey">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q14:guid" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetRoleByKeyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetRoleByKeyResult" nillable="true" type="q15:RoleDataObject" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetRoleByKeyResult" nillable="true" type="q11:RoleDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateRoles">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="roleDataObjects" nillable="true" type="q16:ArrayOfRoleDataObject" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="roleDataObjects" nillable="true" type="q12:ArrayOfRoleDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateRolesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="CreateRolesResult" nillable="true" type="q17:ArrayOfRoleDataObject" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="CreateRolesResult" nillable="true" type="q13:ArrayOfRoleDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRoles">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="roleDataObjects" nillable="true" type="q18:ArrayOfRoleDataObject" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="roleDataObjects" nillable="true" type="q14:ArrayOfRoleDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateRolesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="UpdateRolesResult" nillable="true" type="q19:ArrayOfRoleDataObject" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="UpdateRolesResult" nillable="true" type="q15:ArrayOfRoleDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeleteRoles">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="roleIDs" nillable="true" type="q20:ArrayOfguid" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="roleIDs" nillable="true" type="q16:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -209,8 +208,8 @@
   <xs:element name="AssignRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="userID" type="q21:guid" />
-        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="roleID" type="q22:guid" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="roleID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -222,7 +221,7 @@
   <xs:element name="UnassignRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="userID" type="q23:guid" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -234,14 +233,14 @@
   <xs:element name="GetUserRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="userId" type="q24:guid" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetUserRoleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetUserRoleResult" nillable="true" type="q25:RoleDataObject" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetUserRoleResult" nillable="true" type="q17:RoleDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Globalization;
+using AutoMapper;
 using ByteartRetailMini.Domain.Models;
 
 namespace ByteartRetailMini.Application.DataObjects
@@ -83,7 +84,14 @@ namespace ByteartRetailMini.Application.DataObjects
 
         public static ShoppingCartItemDataObject ToData(this ShoppingCartItem shoppingCartItem)
         {
-            return Mapper.Map<ShoppingCartItem, ShoppingCartItemDataObject>(shoppingCartItem);
+            return new ShoppingCartItemDataObject
+            {
+                ID = shoppingCartItem.ID,
+                LineAmount = shoppingCartItem.Quantity*shoppingCartItem.Product.UnitPrice,
+                Product = shoppingCartItem.Product.ToData(),
+                Quantity = shoppingCartItem.Quantity,
+                ShoppingCartID = shoppingCartItem.ShoppingCart.ID.ToString(CultureInfo.InvariantCulture)
+            };
         }
 
         public static ShoppingCartItem ToDomain(this ShoppingCartItemDataObject shoppingCartItemDataObject)

@@ -1,0 +1,14 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class xmlns="urn:nhibernate-mapping-2.2" name="ByteartRetailMini.Domain.Models.UserRole, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="UserRoles">
+    <id name="ID" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="ID" />
+      <generator class="identity" />
+    </id>
+    <property name="RoleID" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="RoleID" not-null="true" />
+    </property>
+    <property name="UserID" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="UserID" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

@@ -70,7 +70,8 @@ namespace ByteartRetailMini.Services.Core
         public static ISessionFactory BuildSessionFactory(bool buildTables = false)
         {
             return Fluently.Configure()
-                .Database(SQLiteConfiguration.Standard.ShowSql().ConnectionString(c => c.FromConnectionStringWithKey("byte")))
+                .Database(SQLiteConfiguration.Standard.ShowSql()
+                .ConnectionString(c => c.FromConnectionStringWithKey("byte")))
                 .CurrentSessionContext("wcf_operation")
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<ProductMap>()).ExposeConfiguration(c =>
                 {

@@ -49,14 +49,14 @@ namespace ByteartRetailMini.Application
             return _session.Query<User>().Count(x => x.UserName == userName && x.Password == password) > 0;
         }
 
-        public bool DisableUser(Guid userID)
+        public bool DisableUser(int userID)
         {
             var user = _session.Get<User>(userID);
             user.Disable();
             return user.IsDisabled;
         }
 
-        public bool EnableUser(Guid userID)
+        public bool EnableUser(int userID)
         {
             var user = _session.Get<User>(userID);
             user.Enable();
@@ -120,7 +120,7 @@ namespace ByteartRetailMini.Application
             return results;
         }
 
-        public void DeleteUsers(IList<Guid> userIDs)
+        public void DeleteUsers(IList<int> userIDs)
         {
             foreach (var id in userIDs)
             {
@@ -128,7 +128,7 @@ namespace ByteartRetailMini.Application
             }
         }
 
-        public UserDataObject GetUserByKey(Guid id)
+        public UserDataObject GetUserByKey(int id)
         {
             return _session.Get<User>(id).ToData();
         }
@@ -153,7 +153,7 @@ namespace ByteartRetailMini.Application
             return _session.Query<Role>().ToList().Select(u => u.ToData()).ToList();
         }
 
-        public RoleDataObject GetRoleByKey(Guid id)
+        public RoleDataObject GetRoleByKey(int id)
         {
             return _session.Get<Role>(id).ToData();
         }
@@ -187,7 +187,7 @@ namespace ByteartRetailMini.Application
             return results;
         }
 
-        public void DeleteRoles(IList<Guid> roleIDs)
+        public void DeleteRoles(IList<int> roleIDs)
         {
             foreach (var id in roleIDs)
             {
@@ -195,24 +195,28 @@ namespace ByteartRetailMini.Application
             }
         }
 
-        public void AssignRole(Guid userID, Guid roleID)
+        public void AssignRole(int userID, int roleID)
         {
             var user = _session.Get<User>(userID);
             var role = _session.Get<Role>(roleID);
             _domainService.AssignRole(user, role);
         }
 
-        public void UnassignRole(Guid userID)
+        public void UnassignRole(int userID)
         {
             var user = _session.Get<User>(userID);
             _domainService.UnassignRole(user);
         }
 
-        public RoleDataObject GetUserRole(Guid userId)
+        public RoleDataObject GetUserRole(string name)
         {
+            var user = GetUserByName(name);
+            if (user == null)
+                return null;
+
             return _session.Query<Role>()
                 .Join(_session.Query<UserRole>(), r => r.ID, u => u.RoleID, (r, ur) => new { r, ur })
-                .Where(x => x.ur.UserID == userId)
+                .Where(x => x.ur.UserID == user.ID)
                 .Select(x => x.r)
                 .FirstOrDefault().ToData();
         }

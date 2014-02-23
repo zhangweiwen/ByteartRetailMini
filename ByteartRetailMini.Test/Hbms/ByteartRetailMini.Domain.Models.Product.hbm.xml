@@ -1,0 +1,23 @@
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class xmlns="urn:nhibernate-mapping-2.2" name="ByteartRetailMini.Domain.Models.Product, ByteartRetailMini.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="Products">
+    <id name="ID" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="ID" />
+      <generator class="identity" />
+    </id>
+    <property name="Name" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="Name" length="40" not-null="true" />
+    </property>
+    <property name="ImageUrl" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="ImageUrl" />
+    </property>
+    <property name="UnitPrice" type="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="UnitPrice" not-null="true" precision="18" scale="2" />
+    </property>
+    <property name="IsFeatured" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="IsFeatured" not-null="true" />
+    </property>
+    <property name="Description" type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="Description" length="4001" not-null="true" />
+    </property>
+  </class>
+</hibernate-mapping>

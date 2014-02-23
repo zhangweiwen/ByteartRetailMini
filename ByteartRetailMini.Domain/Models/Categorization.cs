@@ -8,9 +8,9 @@ namespace ByteartRetailMini.Domain.Models
     [Serializable]
     public partial class Categorization : DomainObject
     {
-        public virtual Guid CategoryID { get; set; }
+        public virtual int CategoryID { get; set; }
 
-        public virtual Guid ProductID { get; set; }
+        public virtual int ProductID { get; set; }
 
         public override string ToString()
         {

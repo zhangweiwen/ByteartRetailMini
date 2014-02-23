@@ -2,7 +2,6 @@
 <xs:schema xmlns:tns="zhww@outlook.com" elementFormDefault="qualified" targetNamespace="zhww@outlook.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:10159/ProductService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" />
   <xs:import schemaLocation="http://localhost:10159/ProductService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="http://localhost:10159/ProductService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import schemaLocation="http://localhost:10159/ProductService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Infrastructure" />
   <xs:element name="CreateProducts">
     <xs:complexType>
@@ -63,7 +62,7 @@
   <xs:element name="DeleteProducts">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="productIDs" nillable="true" type="q9:ArrayOfstring" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="productIDs" nillable="true" type="q9:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -75,7 +74,7 @@
   <xs:element name="DeleteCategories">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="categoryIDs" nillable="true" type="q10:ArrayOfstring" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="categoryIDs" nillable="true" type="q10:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -87,22 +86,22 @@
   <xs:element name="CategorizeProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="productID" type="q11:guid" />
-        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="categoryID" type="q12:guid" />
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+        <xs:element minOccurs="0" name="categoryID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CategorizeProductResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="CategorizeProductResult" nillable="true" type="q13:CategorizationDataObject" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="CategorizeProductResult" nillable="true" type="q11:CategorizationDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UncategorizeProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="productID" type="q14:guid" />
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -114,14 +113,14 @@
   <xs:element name="GetCategoryByID">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q15:guid" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetCategoryByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetCategoryByIDResult" nillable="true" type="q16:CategoryDataObject" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetCategoryByIDResult" nillable="true" type="q12:CategoryDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -133,21 +132,21 @@
   <xs:element name="GetCategoriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetCategoriesResult" nillable="true" type="q17:ArrayOfCategoryDataObject" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetCategoriesResult" nillable="true" type="q13:ArrayOfCategoryDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetProductByID">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q18:guid" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetProductByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetProductByIDResult" nillable="true" type="q19:ProductDataObject" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetProductByIDResult" nillable="true" type="q14:ProductDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -159,50 +158,50 @@
   <xs:element name="GetProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetProductsResult" nillable="true" type="q20:ArrayOfProductDataObject" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetProductsResult" nillable="true" type="q15:ArrayOfProductDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetProductsWithPagination">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Infrastructure" minOccurs="0" name="pageInfo" nillable="true" type="q21:PageInfo" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Infrastructure" minOccurs="0" name="pageInfo" nillable="true" type="q16:PageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetProductsWithPaginationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Infrastructure" minOccurs="0" name="GetProductsWithPaginationResult" nillable="true" type="q22:PagedListOfProductDataObjectUqqArW2s" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Infrastructure" minOccurs="0" name="GetProductsWithPaginationResult" nillable="true" type="q17:PagedListOfProductDataObjectUqqArW2s" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetProductsForCategory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="categoryID" type="q23:guid" />
+        <xs:element minOccurs="0" name="categoryID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetProductsForCategoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetProductsForCategoryResult" nillable="true" type="q24:ArrayOfProductDataObject" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetProductsForCategoryResult" nillable="true" type="q18:ArrayOfProductDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetProductsForCategoryWithPagination">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="categoryID" type="q25:guid" />
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Infrastructure" minOccurs="0" name="pageInfo" nillable="true" type="q26:PageInfo" />
+        <xs:element minOccurs="0" name="categoryID" type="xs:int" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Infrastructure" minOccurs="0" name="pageInfo" nillable="true" type="q19:PageInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetProductsForCategoryWithPaginationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Infrastructure" minOccurs="0" name="GetProductsForCategoryWithPaginationResult" nillable="true" type="q27:PagedListOfProductDataObjectUqqArW2s" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Infrastructure" minOccurs="0" name="GetProductsForCategoryWithPaginationResult" nillable="true" type="q20:PagedListOfProductDataObjectUqqArW2s" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -216,7 +215,7 @@
   <xs:element name="GetFeaturedProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetFeaturedProductsResult" nillable="true" type="q28:ArrayOfProductDataObject" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Application.DataObjects" minOccurs="0" name="GetFeaturedProductsResult" nillable="true" type="q21:ArrayOfProductDataObject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

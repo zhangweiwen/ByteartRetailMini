@@ -4,7 +4,7 @@
   <xs:complexType name="ShoppingCartDataObject">
     <xs:sequence>
       <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfShoppingCartItemDataObject" />
       <xs:element minOccurs="0" name="Subtotal" nillable="true" type="xs:decimal" />
     </xs:sequence>
@@ -18,7 +18,7 @@
   <xs:element name="ArrayOfShoppingCartItemDataObject" nillable="true" type="tns:ArrayOfShoppingCartItemDataObject" />
   <xs:complexType name="ShoppingCartItemDataObject">
     <xs:sequence>
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="LineAmount" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ProductDataObject" />
       <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:int" />
@@ -30,7 +30,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Category" nillable="true" type="tns:CategoryDataObject" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IsFeatured" nillable="true" type="xs:boolean" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
@@ -41,7 +41,7 @@
   <xs:complexType name="CategoryDataObject">
     <xs:sequence>
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProductDataObject" />
     </xs:sequence>
@@ -68,7 +68,7 @@
       <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="DateDelivered" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="DateDispatched" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="SalesLines" nillable="true" type="tns:ArrayOfSalesLineDataObject" />
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ByteartRetailMini.Domain.Models" minOccurs="0" name="Status" nillable="true" type="q1:SalesOrderStatus" />
       <xs:element minOccurs="0" name="Subtotal" nillable="true" type="xs:decimal" />
@@ -83,7 +83,7 @@
   <xs:element name="ArrayOfSalesLineDataObject" nillable="true" type="tns:ArrayOfSalesLineDataObject" />
   <xs:complexType name="SalesLineDataObject">
     <xs:sequence>
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="LineAmount" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ProductDataObject" />
       <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:int" />

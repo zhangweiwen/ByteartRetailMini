@@ -39,13 +39,13 @@ namespace ByteartRetailMini.Application
         /// 删除商品信息。
         /// </summary>
         /// <param name="productIDs">需要删除的商品信息的ID值。</param>
-        void DeleteProducts(IList<string> productIDs);
+        void DeleteProducts(IList<int> productIDs);
         
         /// <summary>
         /// 删除商品分类。
         /// </summary>
         /// <param name="categoryIDs">需要删除的商品分类的ID值。</param>
-        void DeleteCategories(IList<string> categoryIDs);
+        void DeleteCategories(IList<int> categoryIDs);
         
         /// <summary>
         /// 设置商品分类。
@@ -53,20 +53,20 @@ namespace ByteartRetailMini.Application
         /// <param name="productID">需要进行分类的商品ID值。</param>
         /// <param name="categoryID">商品分类ID值。</param>
         /// <returns>带有商品分类信息的对象。</returns>
-        CategorizationDataObject CategorizeProduct(Guid productID, Guid categoryID);
+        CategorizationDataObject CategorizeProduct(int productID, int categoryID);
         
         /// <summary>
         /// 取消商品分类。
         /// </summary>
         /// <param name="productID">需要取消分类的商品ID值。</param>
-        void UncategorizeProduct(Guid productID);
+        void UncategorizeProduct(int productID);
 
         /// <summary>
         /// 根据指定的ID值获取商品分类。
         /// </summary>
         /// <param name="id">商品分类ID值。</param>
         /// <returns>商品分类。</returns>
-        CategoryDataObject GetCategoryByID(Guid id);
+        CategoryDataObject GetCategoryByID(int id);
         
         /// <summary>
         /// 获取所有的商品分类。
@@ -79,7 +79,7 @@ namespace ByteartRetailMini.Application
         /// </summary>
         /// <param name="id">商品信息ID值。</param>
         /// <returns>商品信息。</returns>
-        ProductDataObject GetProductByID(Guid id);
+        ProductDataObject GetProductByID(int id);
         
         /// <summary>
         /// 获取所有的商品信息。
@@ -99,7 +99,7 @@ namespace ByteartRetailMini.Application
         /// </summary>
         /// <param name="categoryID">商品分类ID值。</param>
         /// <returns>所有的商品信息。</returns>
-        IList<ProductDataObject> GetProductsForCategory(Guid categoryID);
+        IList<ProductDataObject> GetProductsForCategory(int categoryID);
 
         /// <summary>
         /// 根据指定的商品分类ID值，以分页的方式获取该分类下所有的商品信息。
@@ -107,7 +107,7 @@ namespace ByteartRetailMini.Application
         /// <param name="categoryID">商品分类ID值。</param>
         /// <param name="pageInfo">带有分页参数信息的对象。</param>
         /// <returns>所有的商品信息。</returns>
-        PagedList<ProductDataObject> GetProductsForCategoryWithPagination(Guid categoryID, PageInfo pageInfo);
+        PagedList<ProductDataObject> GetProductsForCategoryWithPagination(int categoryID, PageInfo pageInfo);
         
         /// <summary>
         /// 获取所有的特色商品信息。

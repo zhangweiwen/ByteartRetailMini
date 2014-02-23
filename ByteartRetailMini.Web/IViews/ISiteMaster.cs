@@ -12,6 +12,6 @@ namespace ByteartRetailMini.Web.IViews
     public partial interface ISiteMaster
     {
         void RemoveNotAuthenticatedLinks();
-        void RemoveLinkByRole(Role role);
+        void LogonSuccess(Role role);
     }
 }

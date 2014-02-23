@@ -10,7 +10,7 @@ namespace ByteartRetailMini.Domain.Mappings
             Table("ShoppingCartItems");
             Id(x => x.ID);
             Map(x => x.Quantity).Not.Nullable();
-            References(x => x.Product);
+            References(x => x.Product).Not.LazyLoad();
             References(x => x.ShoppingCart);
         }
     }
