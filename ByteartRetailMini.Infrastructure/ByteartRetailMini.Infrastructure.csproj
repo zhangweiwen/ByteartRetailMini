@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrderInfo.cs" />
     <Compile Include="PagedList.cs" />
     <Compile Include="PageInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

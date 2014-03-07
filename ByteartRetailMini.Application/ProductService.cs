@@ -138,7 +138,7 @@ namespace ByteartRetailMini.Application
         public Category GetCategoryForProduct(int productID)
         {
             var query = _session.Query<Category>()
-                .Join(_session.Query<Categorization>(), x => x.ID, y => y.CategoryID, (x, y) => new {x, y})
+                .Join(_session.Query<Categorization>(), x => x.ID, y => y.CategoryID, (x, y) => new { x, y })
                 .Where(o => o.y.ProductID == productID).Select(x => x.x);
             return query.FirstOrDefault();
         }
@@ -157,12 +157,8 @@ namespace ByteartRetailMini.Application
 
         public PagedList<ProductDataObject> GetProductsWithPagination(PageInfo pageInfo)
         {
-            var products = _session.Query<Product>().ToPagedList(pageInfo).Select(p => p.ToData()).ToList();
-            return new PagedList<ProductDataObject>(pageInfo.PageSize, _session.Query<Product>().Count())
-            {
-                PageIndex = pageInfo.PageIndex,
-                Items = products
-            };
+            var xxx = _session.Query<Product>().ToPagedList(pageInfo).Cast(x => x.ToData());
+            return xxx;
         }
 
         public IList<ProductDataObject> GetProductsForCategory(int categoryID)
@@ -178,12 +174,8 @@ namespace ByteartRetailMini.Application
             var query = _session.Query<Product>()
                 .Join(_session.Query<Categorization>(), p => p.ID, c => c.ProductID, (p, c) => new { p, c })
                 .Where(x => x.c.CategoryID == categoryID);
-            var products = query.ToPagedList(pageInfo).Select(x => x.p.ToData()).ToList();
-            return new PagedList<ProductDataObject>(pageInfo.PageSize, query.Count())
-            {
-                PageIndex = pageInfo.PageIndex,
-                Items = products
-            };
+
+            return query.ToPagedList(pageInfo).Cast(x => x.p.ToData());
         }
 
         public IList<ProductDataObject> GetFeaturedProducts(int count)

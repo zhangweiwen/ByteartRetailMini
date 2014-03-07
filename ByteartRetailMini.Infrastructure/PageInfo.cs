@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace ByteartRetailMini.Infrastructure
 {
@@ -12,9 +13,6 @@ namespace ByteartRetailMini.Infrastructure
         public int PageIndex { get; set; }
 
         [DataMember]
-        public bool IsDesc { get; set; }
-
-        [DataMember]
-        public string OrderPropertyName { get; set; }
+        public IList<OrderInfo> OrderInfos { get; set; }
     }
 }

@@ -6,6 +6,11 @@ namespace ByteartRetailMini.Infrastructure
     [DataContract]
     public class PagedList<T>
     {
+        public PagedList()
+        {
+            
+        }
+
         public PagedList(int pageSize, int totalCount)
         {
             PageSize = pageSize;
@@ -14,16 +19,16 @@ namespace ByteartRetailMini.Infrastructure
         }
 
         [DataMember]
-        public int PageSize { get; private set; }
+        public int PageSize { get; set; }
 
         [DataMember]
         public int PageIndex { get; set; }
 
         [DataMember]
-        public int? TotalCount { get; private set; }
+        public int TotalCount { get; set; }
 
         [DataMember]
-        public int? TotalPage { get; private set; }
+        public int TotalPage { get; set; }
 
         [DataMember]
         public List<T> Items { get; set; }

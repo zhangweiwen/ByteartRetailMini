@@ -87,6 +87,8 @@ namespace ByteartRetailMini.Web.Controls
                 NextLink.HRef = nextUrl;
                 LastLink.HRef = lastUrl;
             }
+            const string format = "第{0}页，共{1}页";
+            PageSummary.InnerText = string.Format(format, products.PageIndex,products.TotalPage);
         }
 
         public void BindCategory(string categoryName)
